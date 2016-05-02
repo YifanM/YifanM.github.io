@@ -1,0 +1,28 @@
+<style>
+a:link {color:rgb(0,0,50); background-color:transparent; text-decoration: none;}
+a:visited {color:blue; background-color:transparent; text-decoration: none;}
+a:hover {color:rgb(0,50,0); background-color:transparent; text-decoration: none;}
+a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none;}
+#main_content{
+	column-count: 3;
+	column-gap:40px;
+	column-rule-style:solid;
+	column-rule-width:1px;
+	column-rule-color:black;
+}
+#main_left{
+	background-color:green;
+}
+#main_middle{
+	background-color:red;
+}
+#main_right{
+	background-color:orange;
+}
+#clock_div{
+	font:calibri;
+	font-size:20;
+	font-style:italic;
+	border-style:dotted;
+	border-color:blue;
+</style>

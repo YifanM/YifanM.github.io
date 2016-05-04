@@ -3,38 +3,24 @@
 <head>
 	<title>Yifan Ma</title>
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen"/> 
-	<!--<script type="text/javascript" src="jquery-1.12.3.min.js"> </script> -->
+	<script type="text/javascript" src="jquery-1.12.3.min.js"> </script> 
 	<script type="text/javascript" src="script.js"></script>
-	</head>
-<body>
-	<img src="ornamental_border_top.png" alt="You shouldn't be seeing this." width="250" height="50">
-<h1>May 1 push</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<small>You're seeing the default index page.</small>
-<ul id="main_nav">
-	<li><a href="index.html">Home</a></li> <!-- make it somehow so that if youre on the same page as the link, it cant be clicked -->
-	<li><a href="me.html">About Me</a></li>
-	<li><a href="uwaterloo.html">UWaterloo</a></li>
-	<li><a href="documents.html">Documents</a></li>
-	<li><a href="projects.html">Projects</a></li>
-</ul>
-<br>
-<div id="clock_div">
-<p>Right now it is <span id="clock">&nbsp</span> EST</p>
-</div>
-<br>
-<div id="main_content">
-<div id="main_left">
-	<!-- there is an annoying extra space here? -->
-<p>Needs</p>
-</div>
-<div id="main_middle">
-	<p>some</p>
-	</div>
-<div id="main_right">
-<p>CSS</p>
-</div>
-</div>
+</head>
+<body id="home_page"><!-- separate clock into date and time, make them both transition by sliding/fading -->
+		<p><div id="clock_date"></div><div id="clock_time"></div></p>
+	<h1>May 3 push</h1>
+	<p>I'm hosted with GitHub Pages. Next push: CSS the clock and make the tabs vertical (lock stuff to sides too).</p>
+	<small>You're seeing the default index page.</small>
+	<nav>
+	<div class="main_tabs">
+		<ul class="tabs">
+			<li id="home_tab"><a href="index.html">Home</a></li>
+			<li id="me_tab"><a href="me.html">About Me</a></li>
+			<li id="documents_tab"><a href="documents.html">Documents</a></li>
+			<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
+			<li id="projects_tab"><a href="projects.html">Projects</a></li>
+		</ul>
+	</div></nav>
 </body>
 </html>
 

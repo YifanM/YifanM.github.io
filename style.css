@@ -6,7 +6,7 @@ a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none
 
 @font-face{
 	font-family:Raleway;
-	src: url(http://sgc.asn.au/css/raleway-font/raleway-regular-webfont.woff);
+	src: url("http://sgc.asn.au/css/raleway-font/raleway-regular-webfont.woff");
 }
 
 .main_tabs{

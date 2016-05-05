@@ -24,13 +24,13 @@ function GetClock(){
 	if (nmin != lastMinute){
 
 	}*/
-	document.getElementById('clock_date').innerHTML= tmonth[nmonth]+" "+ndate+", "+nyear; 
+	/*document.getElementById('clock_date').innerHTML= tmonth[nmonth]+" "+ndate+", "+nyear; 
 	document.getElementById("clock_time").innerHTML= +nhour+":"+nmin+"";
 	lastYear = nyear;
 	lastMonth = nmonth;
 	lastDay = nday;
 	lastHour = nhour;
-	lastMinute = nmin;
+	lastMinute = nmin;*/
 }
 
 window.onload=function(){

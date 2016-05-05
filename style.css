@@ -4,6 +4,11 @@ a:visited {color:blue; background-color:transparent; text-decoration: none;}
 a:hover {color:rgb(0,50,0); background-color:transparent; text-decoration: none;}
 a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none;}
 
+@font-face{
+	font-family:Raleway;
+	src: url(http://sgc.asn.au/css/raleway-font/raleway-regular-webfont.woff);
+}
+
 .main_tabs{
 	width:100%;
 	list-style:none;

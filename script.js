@@ -33,11 +33,8 @@ function GetClock(){
 	lastMinute = nmin;*/
 }
 
-window.onload=function(){
-	GetClock();
-	setInterval(GetClock,1000);
-	//if (onCLick == true){
-	if (jQuery("body").is("#home_page")){ //make it so from clicking tab is fade, from other source is instant
+function getActive(){
+		if (jQuery("body").is("#home_page")){ //make it so from clicking tab is fade, from other source is instant
 		jQuery(home_tab).addClass("active");
 	}
 	else if (jQuery("body").is("#me_page")){
@@ -52,8 +49,13 @@ window.onload=function(){
 	else if (jQuery("body").is("#projects_page")){
 		jQuery(projects_tab).addClass("active");
 	}
-	//onClick = false;
-//}
+}
+
+window.onload=function(){
+	GetClock();
+	setInterval(GetClock,1000);
+	getActive();
+	document.body.style.opacity=1;
 }
 
 

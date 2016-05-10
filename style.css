@@ -5,8 +5,18 @@ a:hover {color:rgb(0,50,0); background-color:transparent; text-decoration: none;
 a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none;}
 
 @font-face{
-	font-family: "Raleway";
-	src: url("https://fonts.googleapis.com/css?family=Raleway");
+	font-family: 'Raleway';
+	src: url('Raleway-Regular.ttf');
+}
+
+@font-face{
+	font-family: 'Raleway_Light';
+	src: url('Raleway-Light.ttf');
+}
+
+@font-face{
+	font-family: 'Raleway_Thin';
+	src: url('Raleway-Thin.ttf');
 }
 
 .main_tabs{
@@ -27,7 +37,7 @@ a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none
 	background:#779EE6;
 	background-size:100% 90%;
 	font-size:16px;
-	font-family:Raleway; /*most people dont have raleway, add to font family or use those "font class" things?*/
+	font-family:Raleway, sans-serif; /*most people dont have raleway, add to font family or use those "font class" things?*/
 	font-weight:600;
 	color:#fff;
 	margin-bottom: -3px;
@@ -48,25 +58,26 @@ li.active a, li.active{
 	background:#586EFC;
 }
 
-}
-#date{
-	font-size:50;
-}
 #head_name{
-	font-family:Raleway;
+	font-family:Raleway_Light, sans-serif;
 	position:absolute; top:-20px; left:15px;
 	font-size:30px;
-	font-weight:200;
+	font-weight:100;
 }
+
 body{
 	margin-top:0px;
 	margin-right:0px;
 	margin-bottom:0px;
 	margin-left:0px;
 	background-image:url("http://i.imgur.com/gGMITqU.jpg");
+	background-position: fixed;
 	background-size:cover;
 	background-repeat:no-repeat;
+	opacity:0;
+	transition:opacity linear 0.5s;
 }
+
 #circle_1{
 	width:30px;
 	height:30px;
@@ -98,13 +109,13 @@ body{
 	position:absolute;top:50px;left:0px;
 }
 #clock_date{
-	font-family:Raleway;
+	font-family:Raleway_Thin, sans-serif;
 	font-weight:800;
 	position:absolute;top:18px;left:300px;
 }
 #clock_time{
-	font-weight:300;
-	font-family:Raleway;
+	font-weight:500;
+	font-family:Raleway_Light, sans-serif;
 	position:absolute;top:18px;left:400px;
 }
 .text{

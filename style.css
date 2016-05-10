@@ -51,7 +51,7 @@ li.active a, li.active{
 	color:#4c4c4c;
 	border-radius: 3px 3px 0px 0px;
 	border-bottom-color:black; 
-	transition:all linear 0.4s;
+	transition:all linear 0.7s;
 }
 
 .tabs a:hover{
@@ -60,9 +60,10 @@ li.active a, li.active{
 
 #head_name{
 	font-family:Raleway_Light, sans-serif;
-	position:absolute; top:-20px; left:15px;
+	position:absolute; top:-20px; left:12px;
 	font-size:30px;
 	font-weight:100;
+	z-index:2;
 }
 
 body{
@@ -72,10 +73,11 @@ body{
 	margin-left:0px;
 	background-image:url("http://i.imgur.com/gGMITqU.jpg");
 	background-position: fixed;
-	background-size:cover;
 	background-repeat:no-repeat;
+	max-width:100%;
+	height:auto;
 	opacity:0;
-	transition:opacity linear 0.5s;
+	transition:opacity linear 0.4s;
 }
 
 #circle_1{
@@ -113,12 +115,36 @@ body{
 	font-weight:800;
 	position:absolute;top:18px;left:300px;
 }
+#clock_newDate{
+	font-family:Raleway_Thin, sans-serif;
+	font-weight:800;
+	position:absolute;top:35px;left:300px;
+	/*opacity=0;
+	transition:opacity linear 0.3s;*/
+	visibility:hidden;
+}
 #clock_time{
 	font-weight:500;
 	font-family:Raleway_Light, sans-serif;
 	position:absolute;top:18px;left:400px;
 }
+#clock_newTime{
+	font-weight:500;
+	font-family:Raleway_Light, sans-serif;
+	position:absolute;top:35px;left:400px;
+	/*opacity=0;
+	transition:opacity linear 0.3s;*/
+	visibility:hidden;
+}
 .text{
-	text-indent:50px;
+	margin-left:150px;
+	font-family:Raleway, sans-serif;
+}
+#sidebar{
+	position:absolute;left:0px;top:0px;bottom:0px;
+	width:140px;
+	background:#b3e6ff;
+	opacity:0.4;
+	z-index:1;
 }
 </style>

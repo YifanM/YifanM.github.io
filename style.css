@@ -5,8 +5,8 @@ a:hover {color:rgb(0,50,0); background-color:transparent; text-decoration: none;
 a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none;}
 
 @font-face{
-	font-family:Raleway;
-	src: url("http://sgc.asn.au/css/raleway-font/raleway-regular-webfont.eot");
+	font-family: "Raleway";
+	src: url("https://fonts.googleapis.com/css?family=Raleway");
 }
 
 .main_tabs{
@@ -27,7 +27,7 @@ a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none
 	background:#779EE6;
 	background-size:100% 90%;
 	font-size:16px;
-	font-family:Raleway;
+	font-family:Raleway; /*most people dont have raleway, add to font family or use those "font class" things?*/
 	font-weight:600;
 	color:#fff;
 	margin-bottom: -3px;
@@ -35,11 +35,12 @@ a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none
 	border-bottom: 3px solid #fff;
 	transition:all linear 0.4s; /* add more animations? */
 }
+
 li.active a, li.active{ 
 	background:#fff;
 	color:#4c4c4c;
 	border-radius: 3px 3px 0px 0px;
-	border-bottom-color:black;
+	border-bottom-color:black; 
 	transition:all linear 0.4s;
 }
 

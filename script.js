@@ -26,7 +26,7 @@ function GetClock(){
 	}
 	}
 	if (d2.getDate() != curday ){
-		if (document.getElementById("clock_newDime").style.opacity == 0){
+		if (document.getElementById("clock_newDate").style.opacity == 0){
 		document.getElementById('clock_newDate').innerHTML= tmonth[curmonth]+" "+curday+", "+curyear;
 		document.getElementById("clock_newDate").style.opacity=1;
 		document.getElementById("clock_date").style.opacity=0; 

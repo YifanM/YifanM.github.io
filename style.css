@@ -71,16 +71,27 @@ body{
 	margin-right:0px;
 	margin-bottom:0px;
 	margin-left:0px;
-	background-image:url("http://i.imgur.com/gGMITqU.jpg");
-	background-position: fixed;
+	background-image:url("tuxpi.com.1462429345.jpg");
 	background-repeat:no-repeat;
-	max-width:100%;
-	height:auto;
+	background-position:140px 0px;
+	/*background-size:100% 100%; each of these background sizes has its own uses lol, is there a way to choose between them if theres no universal option?*/
+	/*background-size:auto;*/
+	background-size:cover;
 	opacity:0;
 	transition:opacity linear 0.4s;
 }
 
-#circle_1{
+@keyframes clockUpdateD {
+	from {position:absolute;top:35px;left:300px;}
+	to {position:absolute;top:18px;left:300px;}
+}
+
+@keyframes clockUpdateT {
+	from {position:absolute;top:35px;left:400px;}
+	to {position:absolute;top:18px;left:400px;}
+}
+
+#circle_1{ /*change these ugly ass colours*/
 	width:30px;
 	height:30px;
 	border-radius:15px;
@@ -114,37 +125,54 @@ body{
 	font-family:Raleway_Thin, sans-serif;
 	font-weight:800;
 	position:absolute;top:18px;left:300px;
+	opacity=1;
+	animation-duration:1s;
+	transition:opacity linear 0.3s;
 }
 #clock_newDate{
 	font-family:Raleway_Thin, sans-serif;
 	font-weight:800;
 	position:absolute;top:35px;left:300px;
-	/*opacity=0;
-	transition:opacity linear 0.3s;*/
-	visibility:hidden;
+	opacity=0;
+	transition:opacity linear 0.3s;
+	animation-duration: 1s;
+	/*visibility:hidden;*/
 }
 #clock_time{
 	font-weight:500;
 	font-family:Raleway_Light, sans-serif;
 	position:absolute;top:18px;left:400px;
+	opacity=1;
+	animation-duration:1s;
+	transition:opacity linear 0.3s;
 }
 #clock_newTime{
 	font-weight:500;
 	font-family:Raleway_Light, sans-serif;
 	position:absolute;top:35px;left:400px;
-	/*opacity=0;
-	transition:opacity linear 0.3s;*/
-	visibility:hidden;
+	opacity=0;
+	transition:opacity linear 0.3s;
+	animation-duration: 1s;
+	/*visibility:hidden;*/
 }
 .text{
 	margin-left:150px;
 	font-family:Raleway, sans-serif;
 }
 #sidebar{
-	position:absolute;left:0px;top:0px;bottom:0px;
+	position:absolute;left:0px;top:52.5px;bottom:0px;
 	width:140px;
-	background:#b3e6ff;
-	opacity:0.4;
-	z-index:1;
+	background:linear-gradient(to right, #b3e6ff,transparent);
+}
+#sidebar_line{
+	position:absolute;left:140px;top:0px;bottom:0px;
+	width:1.5px;
+	background:linear-gradient(black,transparent);
+}
+#header_line{
+	position:absolute;left:0px;top:53px;right:700px;
+	height:1.5px;
+	background:linear-gradient(to right, black, transparent);	
+z-index:1;
 }
 </style>

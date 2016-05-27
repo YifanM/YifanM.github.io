@@ -8,14 +8,41 @@ function GetClock(){
 	var curhour=d1.getHours(),curminute=d1.getMinutes();
 	if(curminute<=9) curminute="0"+curminute;
 	if (d2.getMinutes() != curminute ){
-		document.getElementById('clock_newTime').innerHTML= curhour+":"+curminute+""; 
-		//document.getElementById("clock_newTime").style.visibility="visible";
-		//document.getElementById("clock_time").fadeTo("slow", 0,00, function(){})
+		if (document.getElementById("clock_newTime").style.opacity == 0){
+		document.getElementById('clock_newTime').innerHTML= curhour+":"+curminute+"";
+		document.getElementById("clock_newTime").style.opacity=1;
+		document.getElementById("clock_time").style.opacity=0; 
+		document.getElementById("clock_newTime").style.webkitAnimationName = "clockUpdateT";
+		document.getElementById("clock_newTime").style.top = "18px";
+		document.getElementById("clock_time").style.top = "35px";
+	}
+	else {
+		document.getElementById('clock_time').innerHTML= curhour+":"+curminute+"";
+		document.getElementById("clock_newTime").style.opacity=0; 
+		document.getElementById("clock_time").style.opacity=1;
+		document.getElementById("clock_time").style.webkitAnimationName = "clockUpdateT";
+		document.getElementById("clock_time").style.top = "18px";
+		document.getElementById("clock_newTime").style.top = "35px";
+	}
 	}
 	if (d2.getDate() != curday ){
-		document.getElementById('clock_newDate').innerHTML= tmonth[curmonth]+" "+curday+", "+curyear; 
-		//document.getElementById("clock_newDate").style.visibility="visible";
-     }
+		if (document.getElementById("clock_newDime").style.opacity == 0){
+		document.getElementById('clock_newDate').innerHTML= tmonth[curmonth]+" "+curday+", "+curyear;
+		document.getElementById("clock_newDate").style.opacity=1;
+		document.getElementById("clock_date").style.opacity=0; 
+		document.getElementById("clock_newDate").style.webkitAnimationName = "clockUpdateD";
+		document.getElementById("clock_newDate").style.top = "18px";
+		document.getElementById("clock_date").style.top = "35px";
+	}
+		else {
+		document.getElementById('clock_date').innerHTML= curhour+":"+curminute+"";
+		document.getElementById("clock_newDate").style.opacity=0; 
+		document.getElementById("clock_date").style.opacity=1;
+		document.getElementById("clock_date").style.webkitAnimationName = "clockUpdateT";
+		document.getElementById("clock_date").style.top = "18px";
+		document.getElementById("clock_newDate").style.top = "35px";
+	}
+    }
 	d2 = new Date(d1)
 }
 
@@ -49,11 +76,13 @@ function getActive(){
 
 window.onload=function(){
 	d2 = new Date();
+	getActive();
 	getInitialClock();
+	document.body.style.opacity=1;
+	document.getElementById("clock_newDate").style.opacity=0;
+	document.getElementById("clock_newTime").style.opacity=0;	
 	GetClock();
 	setInterval(GetClock,1000);
-	getActive();
-	document.body.style.opacity=1;
 }
 
 

@@ -23,7 +23,7 @@ a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none
 	width:100%;
 	list-style:none;
 	display:inline-block;
-	background-color:#FFDEFD;
+	background:linear-gradient(#FFDEFD, #FFDEFD, white);
 }
 .tabs li{
 	margin:0px 5px;
@@ -63,9 +63,13 @@ li.active a, li.active{
 	position:absolute; top:-20px; left:9px;
 	font-size:30px;
 	font-weight:100;
-	z-index:2;
+	z-index:1;
 }
 
+#head_box{
+	position:absolute; top:0px; left:0px; right:1140px; bottom:550px;
+	background-color:white;
+}
 body{
 	margin-top:0px;
 	margin-right:0px;
@@ -162,7 +166,7 @@ body{
 #sidebar{
 	position:absolute;left:0px;top:52.5px;bottom:0px;
 	width:140px;
-	background:linear-gradient(to right, #b3e6ff,transparent);
+	background:linear-gradient(to right, #b3e6ff, #b3e6ff, transparent);
 }
 #sidebar_line{
 	position:absolute;left:140px;top:0px;bottom:120px;

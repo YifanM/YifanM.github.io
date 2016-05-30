@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="favicon.ico">
 	<title>Yifan Ma</title>
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen"/> 
 	<script type="text/javascript" src="jquery-1.12.3.min.js"> </script> 
 	<script type="text/javascript" src="script.js"></script>
+	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
 	<div id="head_name">
 		<p>Yifan Ma</p>
 	</div>
@@ -16,14 +18,21 @@
 		<dic id="circle_3">
 		</div>
 	</div>
-	<div id="clock_date"></div>
-	<div id="clock_time"></div>
-			<div id="clock_newDate"></div>
+		<div id="clock_date"></div>
+		<div id="clock_time"></div>
+		<div id="clock_newDate"></div>
 		<div id="clock_newTime"></div>
+		<small id="place">Waterloo, ON</small>
+		<div id="weather"></div>
+		<div id="weatherCondition"></div>
+		<div id="weatherNext"></div>
+		<div id="weatherConditionNext"></div>
+		<a href="https://www.yahoo.com/?ilc=401" target="_blank" id="yahoo_logo"> <img src="https://poweredby.yahoo.com/purple.png" height="20" width="90"> </a>
+		<div id="header_line"></div>
 	<nav>
 		<div class="main_tabs">
 			<ul class="tabs">
-				<li id="projects_tab"><a href="projects.html">Projects</a></li>
+				<li id="projects_tab"><a href="projects.html">Other Work</a></li>
 				<li id="documents_tab"><a href="documents.html">Documents</a></li>
 				<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
 				<li id="me_tab"><a href="me.html">About Me</a></li>
@@ -35,6 +44,7 @@
 <body id="documents_page">
 	<div id="sidebar">
 		<!-- now add more shit -->
+	</div><div id="sidebar_line">
 	</div>
 	<div class="text">
 		<p>documents</p>

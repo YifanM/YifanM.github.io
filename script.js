@@ -1,5 +1,7 @@
 var tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
 var d1, d2, curYear, curMonth, curDay, curHour, curMinute;
+var weather_high, weather_low, weather_condition;
+var weather_high2, weather_low2, weather_condition2;
 
 function GetClock(){
 	d1=new Date();
@@ -54,6 +56,7 @@ d1=new Date();
 	if(curminute<=9) curminute="0"+curminute;
 	document.getElementById('clock_date').innerHTML= tmonth[curmonth]+" "+curday+", "+curyear; 
 	document.getElementById("clock_time").innerHTML= +curhour+":"+curminute+"";
+	document.getElementById("place").innerHTML = "Waterloo, ON "+curhour+":"+curminute;
 }
 
 function getActive(){
@@ -78,6 +81,10 @@ window.onload=function(){
 	d2 = new Date();
 	getActive();
 	getInitialClock();
+	document.getElementById("weather").innerHTML = weather_high + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low; 
+	document.getElementById("weatherCondition").innerHTML = weather_condition;
+	//document.getElementById("weatherNext").innerHTML = weather_high2 + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low2; 
+	//document.getElementById("weatherConditionNext").innerHTML = weather_condition2;
 	document.body.style.opacity=1;
 	document.getElementById("clock_newDate").style.opacity=0;
 	document.getElementById("clock_newTime").style.opacity=0;	
@@ -85,6 +92,14 @@ window.onload=function(){
 	setInterval(GetClock,1000);
 }
 
+var weatherFunction = function(data) {
+    weather_high = data.query.results.channel.item.forecast[0].high;
+    weather_low = data.query.results.channel.item.forecast[0].low;
+    weather_condition = data.query.results.channel.item.forecast[1].text;
+      weather_high2 = data.query.results.channel.item.forecast[1].high;
+    weather_low2 = data.query.results.channel.item.forecast[1].low;
+    weather_condition2 = data.query.results.channel.item.forecast[1].text;
+  };
 
 jQuery(document).ready(function() {
 	jQuery('.main_tabs .tabs a').on('click', function(e)  {

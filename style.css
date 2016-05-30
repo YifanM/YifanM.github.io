@@ -60,7 +60,7 @@ li.active a, li.active{
 
 #head_name{
 	font-family:Raleway_Light, sans-serif;
-	position:absolute; top:-20px; left:12px;
+	position:absolute; top:-20px; left:9px;
 	font-size:30px;
 	font-weight:100;
 	z-index:2;
@@ -165,7 +165,7 @@ body{
 	background:linear-gradient(to right, #b3e6ff,transparent);
 }
 #sidebar_line{
-	position:absolute;left:140px;top:0px;bottom:0px;
+	position:absolute;left:140px;top:0px;bottom:120px;
 	width:1.5px;
 	background:linear-gradient(black,transparent);
 }
@@ -174,5 +174,29 @@ body{
 	height:1.5px;
 	background:linear-gradient(to right, black, transparent);	
 z-index:1;
+}
+
+#place{
+	position:absolute;left:492px;top:24px;
+	font-family:Raleway_Light, sans-serif;
+}
+#weather{
+	font-family:Raleway_Light, sans-serif;
+	position:absolute;left:460px;top:13px;
+	font-size:12px;
+}
+#weatherCondition{
+	font-family:Raleway_Thin, sans-serif;
+	font-size:16px;
+	position:absolute;left:492px;top:10px;
+}
+/*#weatherNext{
+	font-family:Raleway_Light, sans-serif;
+}
+#weatherConditionNext{
+	font-family:Raleway_Light, sans-serif;
+}*/
+#yahoo_logo{
+	position:absolute;left:489px;top:33px;
 }
 </style>

@@ -27,7 +27,7 @@ a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none
 }
 .tabs li{
 	margin:0px 5px;
-	float:right;
+	float:right; /*perhaps this float is really useful for dynamic positioning */
 	list-style:none;
 }
 .tabs a{
@@ -68,7 +68,8 @@ li.active a, li.active{
 
 #head_box{
 	position:absolute; top:0px; left:0px;
-	width:140px;
+	width:138.5px;
+	height:50px;
 	background-color:white;
 }
 

@@ -67,9 +67,11 @@ li.active a, li.active{
 }
 
 #head_box{
-	position:absolute; top:0px; left:0px; right:1140px; bottom:550px;
+	position:absolute; top:0px; left:0px;
+	width:140px;
 	background-color:white;
 }
+
 body{
 	margin-top:0px;
 	margin-right:0px;

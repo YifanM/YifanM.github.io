@@ -2,6 +2,7 @@ var tmonth=new Array("January","February","March","April","May","June","July","A
 var d1, d2, curYear, curMonth, curDay, curHour, curMinute;
 var weather_high, weather_low, weather_condition;
 var weather_high2, weather_low2, weather_condition2;
+var stocksFB, stocksGOOG, stocksAPPL, stocksTWTR;
 
 function GetClock(){
 	d1=new Date();
@@ -76,15 +77,25 @@ function getActive(){
 		jQuery(projects_tab).addClass("active");
 	}
 }
-
+/*
+function setIcon(weather){
+  	if (d1.GetHours() < 7 || d1.GetHours() > 21) { 
+  }
+    else {
+    	document.getElementById("weatherIcon").src = "/weathericons/cloudy.svg"
+    } 
+  }
+*/
 window.onload=function(){
 	d2 = new Date();
 	getActive();
 	getInitialClock();
 	document.getElementById("weather").innerHTML = weather_high + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low; 
 	document.getElementById("weatherCondition").innerHTML = weather_condition;
+	//document.getElementById("stock_area").innerHTML = "GOOG " + stocksGOOG + " APPL " + stocksAPPL + " FB " + stocksFB + " TWTR " + stocksTWTR;
 	//document.getElementById("weatherNext").innerHTML = weather_high2 + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low2; 
 	//document.getElementById("weatherConditionNext").innerHTML = weather_condition2;
+	//setIcon(weather_condition);
 	document.body.style.opacity=1;
 	document.getElementById("clock_newDate").style.opacity=0;
 	document.getElementById("clock_newTime").style.opacity=0;	
@@ -96,10 +107,30 @@ var weatherFunction = function(data) {
     weather_high = data.query.results.channel.item.forecast[0].high;
     weather_low = data.query.results.channel.item.forecast[0].low;
     weather_condition = data.query.results.channel.item.forecast[1].text;
-      weather_high2 = data.query.results.channel.item.forecast[1].high;
+    weather_high2 = data.query.results.channel.item.forecast[1].high;
     weather_low2 = data.query.results.channel.item.forecast[1].low;
     weather_condition2 = data.query.results.channel.item.forecast[1].text;
   };
+
+
+/* don't forget the JSON object paths need to be updated, if quandl doesn't fix the api problem, ill have to add a button or make it update at a certain time by itself ...
+   well, i guess im  trying again tomorrow 
+jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/FB.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
+	stocksFB = data.query.results.quote.Open;
+});
+
+jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/GOOG.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
+	stocksGOOG = data.query.results.quote.Open;
+});
+
+jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/APPL.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
+	stocksAPPL = data.query.results.quote.Open;
+});
+
+jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/TWTR.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
+	stocksTWTR = data.query.results.quote.Open;
+});
+*/
 
 jQuery(document).ready(function() {
 	jQuery('.main_tabs .tabs a').on('click', function(e)  {

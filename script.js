@@ -92,7 +92,6 @@ window.onload=function(){
 	getInitialClock();
 	document.getElementById("weather").innerHTML = weather_high + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low; 
 	document.getElementById("weatherCondition").innerHTML = weather_condition;
-	//document.getElementById("stock_area").innerHTML = "GOOG " + stocksGOOG + " APPL " + stocksAPPL + " FB " + stocksFB + " TWTR " + stocksTWTR;
 	//document.getElementById("weatherNext").innerHTML = weather_high2 + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low2; 
 	//document.getElementById("weatherConditionNext").innerHTML = weather_condition2;
 	//setIcon(weather_condition);
@@ -110,27 +109,23 @@ var weatherFunction = function(data) {
     weather_high2 = data.query.results.channel.item.forecast[1].high;
     weather_low2 = data.query.results.channel.item.forecast[1].low;
     weather_condition2 = data.query.results.channel.item.forecast[1].text;
-  };
+};
 
-
-/* don't forget the JSON object paths need to be updated, if quandl doesn't fix the api problem, ill have to add a button or make it update at a certain time by itself ...
-   well, i guess im  trying again tomorrow 
-jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/FB.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
-	stocksFB = data.query.results.quote.Open;
+jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/FB.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
+	document.getElementById("stock_area").innerHTML = data1.dataset.data[0][1];
+});
+//i guess i have to nest these, then use itself + new stock info?
+jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/GOOG.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
+	stocksGOOG = data1.dataset.data[0][1];
 });
 
-jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/GOOG.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
-	stocksGOOG = data.query.results.quote.Open;
-});
+jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/APPL.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
+	stocksAPPL = data1.dataset.data[0][1];
+}); //check this later, if still doesn't work, try a different database than WIKI
 
-jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/APPL.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
-	stocksAPPL = data.query.results.quote.Open;
+jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/TWTR.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
+	stocksTWTR = data1.dataset.data[0][1];
 });
-
-jQuery.get("https://www.quandl.com/api/v3/datasets/WIKI/FB/TWTR.json?row=1?api_key=rzH6xM9oAF1phUUPKxoo", function(data){
-	stocksTWTR = data.query.results.quote.Open;
-});
-*/
 
 jQuery(document).ready(function() {
 	jQuery('.main_tabs .tabs a').on('click', function(e)  {

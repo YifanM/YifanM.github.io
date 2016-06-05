@@ -79,8 +79,7 @@ function getActive(){
 }
 
 function setIcon(weather){
-	document.getElementById("weatherIcon").src ="weather-icons/cloudy.jpg";
-	/*if (weather == "Hail") {document.getElementById("weatherIcon").src ="weather-icons/hail.svg";}
+	if (weather == "Hail") {document.getElementById("weatherIcon").src ="weather-icons/hail.svg";}
 	else if (weather.indexOf ("Thunderstorm") > -1) {document.getElementById("weatherIcon").src ="weather-icons/storm.svg";}
 	else if (weather.indexOf ("Rain") > -1 || weather.indexOf("Drizzle") > -1 || weather.indexOf("Showers") > -1) {document.getElementById("weatherIcon").src ="weather-icons/rain.svg";}
 	else if (weather == "Heavy Snow") {document.getElementById("weatherIcon").src ="weather-icons/snowstorm.svg";}
@@ -93,7 +92,7 @@ function setIcon(weather){
 	else{
 		if (weather == "Partly Cloudy" || weather == "Mostly Cloudy") {document.getElementById("weatherIcon").src = "weather-icons/partly sunny.svg";}
 		else {document.getElementById("weatherIcon").src ="weather-icons/sunny.svg";}
-	} */
+	} 
   }
 
 window.onload=function(){

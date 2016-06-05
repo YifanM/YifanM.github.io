@@ -79,20 +79,21 @@ function getActive(){
 }
 
 function setIcon(weather){
-	if (weather == "Hail") {document.getElementById("weatherIcon").src ="weather icons/hail.svg";}
-	else if (weather.indexOf ("Thunderstorm") > -1) {document.getElementById("weatherIcon").src ="weather icons/storm.svg";}
-	else if (weather.indexOf ("Rain") > -1 || weather.indexOf("Drizzle") > -1 || weather.indexOf("Showers") > -1) {document.getElementById("weatherIcon").src ="weather icons/rain.svg";}
-	else if (weather == "Heavy Snow") {document.getElementById("weatherIcon").src ="weather icons/snowstorm.svg";}
-	else if (weather.indexOf ("Snow") > -1) {document.getElementById("weatherIcon").src ="weather icons/snowing.svg";}
-	else if (weather == "Cloudy") {document.getElementById("weatherIcon").src ="weather icons/cloudy.svg";}
+	document.getElementById("weatherIcon").src ="weather-icons/cloudy.jpg";
+	/*if (weather == "Hail") {document.getElementById("weatherIcon").src ="weather-icons/hail.svg";}
+	else if (weather.indexOf ("Thunderstorm") > -1) {document.getElementById("weatherIcon").src ="weather-icons/storm.svg";}
+	else if (weather.indexOf ("Rain") > -1 || weather.indexOf("Drizzle") > -1 || weather.indexOf("Showers") > -1) {document.getElementById("weatherIcon").src ="weather-icons/rain.svg";}
+	else if (weather == "Heavy Snow") {document.getElementById("weatherIcon").src ="weather-icons/snowstorm.svg";}
+	else if (weather.indexOf ("Snow") > -1) {document.getElementById("weatherIcon").src ="weather-icons/snowing.svg";}
+	else if (weather == "Cloudy") {document.getElementById("weatherIcon").src ="weather-icons/cloudy.svg";}
 	else if (d2.getHours < 6 || d2.getHours > 21){
-	    if (weather == "Partly Cloudy" || weather == "Mostly Cloudy") {document.getElementById("weatherIcon").src = "weather icons/partly moony.svg";}
-		else {document.getElementById("weatherIcon").src ="weather icons/nighttime.svg";}
+	    if (weather == "Partly Cloudy" || weather == "Mostly Cloudy") {document.getElementById("weatherIcon").src = "weather-icons/partly moony.svg";}
+		else {document.getElementById("weatherIcon").src ="weather-icons/nighttime.svg";}
 	}
 	else{
-		if (weather == "Partly Cloudy" || weather == "Mostly Cloudy") {document.getElementById("weatherIcon").src = "weather icons/partly sunny.svg";}
-		else {document.getElementById("weatherIcon").src ="weather icons/sunny.svg";}
-	}
+		if (weather == "Partly Cloudy" || weather == "Mostly Cloudy") {document.getElementById("weatherIcon").src = "weather-icons/partly sunny.svg";}
+		else {document.getElementById("weatherIcon").src ="weather-icons/sunny.svg";}
+	} */
   }
 
 window.onload=function(){
@@ -100,6 +101,7 @@ window.onload=function(){
 	getActive();
 	getInitialClock();
 	setIcon(weather_condition);
+	jQuery("#lightbox").hide();
 	document.getElementById("weather").innerHTML = weather_high + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low; 
 	document.getElementById("weatherCondition").innerHTML = weather_condition;
 	//document.getElementById("weatherNext").innerHTML = weather_high2 + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low2; 
@@ -161,7 +163,6 @@ jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/TWTR.json?rows=1&api
 		break;
 	}
 });
-
 	jQuery(".lightboxEvent").click(function(e){
 		e.preventDefault();
 		var image = jQuery(this).attr("href");

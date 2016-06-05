@@ -77,24 +77,33 @@ function getActive(){
 		jQuery(projects_tab).addClass("active");
 	}
 }
-/*
+
 function setIcon(weather){
-  	if (d1.GetHours() < 7 || d1.GetHours() > 21) { 
+	if (weather == "Hail") {document.getElementById("weatherIcon").src ="weather icons/hail.svg";}
+	else if (weather.indexOf ("Thunderstorm") > -1) {document.getElementById("weatherIcon").src ="weather icons/storm.svg";}
+	else if (weather.indexOf ("Rain") > -1 || weather.indexOf("Drizzle") > -1 || weather.indexOf("Showers") > -1) {document.getElementById("weatherIcon").src ="weather icons/rain.svg";}
+	else if (weather == "Heavy Snow") {document.getElementById("weatherIcon").src ="weather icons/snowstorm.svg";}
+	else if (weather.indexOf ("Snow") > -1) {document.getElementById("weatherIcon").src ="weather icons/snowing.svg";}
+	else if (weather == "Cloudy") {document.getElementById("weatherIcon").src ="weather icons/cloudy.svg";}
+	else if (d2.getHours < 6 || d2.getHours > 21){
+	    if (weather == "Partly Cloudy" || weather == "Mostly Cloudy") {document.getElementById("weatherIcon").src = "weather icons/partly moony.svg";}
+		else {document.getElementById("weatherIcon").src ="weather icons/nighttime.svg";}
+	}
+	else{
+		if (weather == "Partly Cloudy" || weather == "Mostly Cloudy") {document.getElementById("weatherIcon").src = "weather icons/partly sunny.svg";}
+		else {document.getElementById("weatherIcon").src ="weather icons/sunny.svg";}
+	}
   }
-    else {
-    	document.getElementById("weatherIcon").src = "/weathericons/cloudy.svg"
-    } 
-  }
-*/
+
 window.onload=function(){
 	d2 = new Date();
 	getActive();
 	getInitialClock();
+	setIcon(weather_condition);
 	document.getElementById("weather").innerHTML = weather_high + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low; 
 	document.getElementById("weatherCondition").innerHTML = weather_condition;
 	//document.getElementById("weatherNext").innerHTML = weather_high2 + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low2; 
 	//document.getElementById("weatherConditionNext").innerHTML = weather_condition2;
-	//setIcon(weather_condition);
 	document.body.style.opacity=1;
 	document.getElementById("clock_newDate").style.opacity=0;
 	document.getElementById("clock_newTime").style.opacity=0;	
@@ -111,23 +120,24 @@ var weatherFunction = function(data) {
     weather_condition2 = data.query.results.channel.item.forecast[1].text;
 };
 
-jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/FB.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
-	document.getElementById("stock_area").innerHTML = data1.dataset.data[0][1];
-});
-//i guess i have to nest these, then use itself + new stock info?
-jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/GOOG.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
-	stocksGOOG = data1.dataset.data[0][1];
+jQuery(document).ready(function() {
+
+	jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/FB.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
+	document.getElementById("fb").innerHTML = "FB " + data1.dataset.data[0][1];
 });
 
-jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/APPL.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
-	stocksAPPL = data1.dataset.data[0][1];
-}); //check this later, if still doesn't work, try a different database than WIKI
+jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/GOOG.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
+	document.getElementById("goog").innerHTML = "GOOG " + data1.dataset.data[0][1];
+});
+
+jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
+	document.getElementById("aapl").innerHTML = "AAPL " + data1.dataset.data[0][1];
+}); 
 
 jQuery.getJSON("https://www.quandl.com/api/v3/datasets/WIKI/TWTR.json?rows=1&api_key=rzH6xM9oAF1phUUPKxoo", function(data1){
-	stocksTWTR = data1.dataset.data[0][1];
+	document.getElementById("twtr").innerHTML = "TWTR " + data1.dataset.data[0][1];
 });
 
-jQuery(document).ready(function() {
 	jQuery('.main_tabs .tabs a').on('click', function(e)  {
 		var currentAttrValue = jQuery(this).attr('href');
 		jQuery('.main_tabs ' + currentAttrValue).fadeIn(400).siblings().hide();
@@ -151,4 +161,14 @@ jQuery(document).ready(function() {
 		break;
 	}
 });
+
+	jQuery(".lightboxEvent").click(function(e){
+		e.preventDefault();
+		var image = jQuery(this).attr("href");
+		jQuery("#lightboxImage").src = image;
+		jQuery("#lightbox").show();
+	});
+	jQuery("#lightbox").live("click", function(){
+		jQuery("#lightbox").hide();
+	});
 });

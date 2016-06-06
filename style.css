@@ -81,11 +81,10 @@ body{
 	background-image:url("tuxpi.com.1462429345.jpg");
 	background-repeat:no-repeat;
 	background-position:140px 0px;
-	left:150px;
 	width:100%;
 	height:100%;
 	/*background-size:100% 100%; each of these background sizes has its own uses lol, is there a way to choose between them if theres no universal option?*/
-	background-size:auto;*/
+	background-size:auto;
 	background-size:cover;
 	opacity:0;
 	transition:opacity linear 0.4s;
@@ -169,8 +168,10 @@ body{
 	margin-left:150px;
 	font-family:Raleway, sans-serif;
 }
-#sidebar{
+#sidebarContent{
 	margin-left:5px;
+}
+#sidebar{
 	position:absolute;left:0px;top:52.5px;bottom:0px;
 	width:140px;
 	background:linear-gradient(to right, #b3e6ff, #b3e6ff, transparent);

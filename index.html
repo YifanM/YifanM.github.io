@@ -3,9 +3,10 @@
 <head>
 	<link rel="icon" href="favicon.ico">
 		<title>Yifan Ma</title>
-		<link rel="stylesheet" type="text/css" href="style.css" media="screen"/> 
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen"> 
 		<script type="text/javascript" src="jquery-1.12.3.min.js"> </script> 
 		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="mainAPI.js"></script>
 		<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
 		<div id="head_name">
 			<p>Yifan Ma</p>
@@ -53,9 +54,8 @@
 		<div class="text">
 			<small>Use Chrome only pls</small>
 			<small>Please only view this page on your browser's maximum size right now.... I harded coded some positions lol....</small>
-			<h1>Hi</h1>
-			<p>I'm hosted with GitHub Pages. add weather icons, check the animation on the clock when window is not focused, animatate something with jquery for practise (as clock was done with css), fill
-			dashboard with apis, add comments/emailing to try out php, add image gallery of indesign stuff to other work, consider using more than 1 font for the entire page LOL, make the next api for xml lol</p>
+			<h1>Check out the recently finished lightbox in Other Work</h1>
+			<p>I'm hosted with GitHub Pages. add weather icons, check the animation on the clock when window is not focused, animatate something with jquery for practise (as clock was done with css), fill dashboard with apis, add comments/emailing to try out php, add image gallery of indesign stuff to other work, consider using more than 1 font for the entire page LOL, make the next api for xml lol</p>
 					<div class="stock_area">
 						<div id="goog"></div>
 						<div id="aapl"></div>
@@ -64,6 +64,8 @@
 					</div>
 					<small>All market data from Quandl. All weather icons from Alessio Atzeni.</small>
 			<!--<p>Thank you to Elated, Insparational Pixels, @Pranav C Balan, @Gaurav Aggarwal, @Qwertiy ... http://www.greywyvern.com/?post=337</p>-->
+			<div id="calendar">
+			</div>
 		</div>
 </body>
 </html>

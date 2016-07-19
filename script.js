@@ -76,6 +76,9 @@ function getActive(){
 	else if (jQuery("body").is("#projects_page")){
 		jQuery(projects_tab).addClass("active");
 	}
+	else if (jQuery("body").is("#contact_page")){
+		jQuery(contact_tab).addClass("active");
+	}
 }
 
 function setIcon(weather){
@@ -143,6 +146,9 @@ jQuery(document).ready(function() {
 		break;
 		case "projects_tab":
 		window.location.href = "projects.html";
+		break;
+		case "contact_tab":
+		window.location.href = "contact.html";
 		break;
 	}
 });

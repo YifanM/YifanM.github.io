@@ -4,7 +4,10 @@
 	<link rel="icon" href="favicon.ico">
 	<title>Yifan Ma</title>
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen"> 
-	<script type="text/javascript" src="jquery-1.12.3.min.js"> </script> 
+	<script type="text/javascript" src="libgif-js-master/libgif.js"></script>
+	<script type="text/javascript" src="libgif-js-master/rubbable.js"></script>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script> 
+	<!--<script type="text/javascript" src="gifScript.js"></script>-->
 	<script type="text/javascript" src="script.js"></script>
 	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
 	<div id="head_name">
@@ -32,27 +35,40 @@
 		<a href="https://www.yahoo.com/?ilc=401" target="_blank" id="yahoo_logo"> <img src="https://poweredby.yahoo.com/purple.png" height="20" width="90"> </a>
 		<div id="header_line"></div>
 	<nav>
-		<div class="main_tabs">
-			<ul class="tabs">
-				<li id="projects_tab"><a href="projects.html">Other Work</a></li>
-				<li id="documents_tab"><a href="documents.html">Documents</a></li>
-				<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
-				<li id="me_tab"><a href="me.html">About Me</a></li>
-				<li id="home_tab"><a href="index.html">Home</a></li>
-			</ul>
-		</div>
+			<div class="main_tabs">
+					<ul class="tabs">
+						<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
+						<li id="projects_tab"><a href="projects.html">Other Work</a></li>
+						<li id="documents_tab"><a href="documents.html">Documents</a></li>
+						<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
+						<li id="me_tab"><a href="me.html">About Me</a></li>
+						<li id="home_tab"><a href="index.html">Home</a></li>
+					</ul>
+				</div>
 	</nav>
 </head>
 <body id="me_page">
 	<div id="sidebar">
 		<div id="sidebarContent">
-			<a id="email" href="mailto:yifan.ma@uwaterloo.ca">Send me an email</a>
-			"Well, I don't need navigation here becaues my website's so small... so add a comments and email me section :D"
 			</div>
 	</div>
 	<div id="sidebar_line"></div>
 	<div class="text">
 		<p>me</p>
+		<p>this is to test if gifs play</p>
+		<img id="testGif" src="http://pa1.narvii.com/5914/1f15871f8c661dba2fa7e8c494bb89406449ee3d_hq.gif" rel:animated_src="http://pa1.narvii.com/5914/1f15871f8c661dba2fa7e8c494bb89406449ee3d_hq.gif" rel:auto_play="0" rel:rubbable="0"></img>
+		<a href="javascript:;" onmousedown="gif1.play(); return false;" id="playButton">Play</a>
+		<a href="javascript:;" onmousedown="gif1.pause(); return false;" id="pauseButton">Pause</a> 
+		<script>
+		var gif1= new SuperGif({gif:document.getElementById('testGif')}); //looks like this library set it up so it has to be here, otherwise it doesn't recognize gif1 in play and pause, oh well
+		gif1.load(function(){
+			document.getElementById('playButton').style.backgroundColor = "white";
+			document.getElementById('pauseButton').style.backgroundColor = "white";
+			document.getElementById('playButton').style.pointerEvents = "all";
+			document.getElementById('pauseButton').style.pointerEvents = "all";
+
+		});
+	</script>
 	</div>
 </body>
 </html>

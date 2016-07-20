@@ -254,7 +254,7 @@ z-index:1;
 	margin-top:55px;
 }
 
-#emailForm input{
+#emailForm input, #bookForm input{
 	display:inline-block;
 	float:left;
 	font-family:Raleway, sans-serif;
@@ -264,13 +264,61 @@ z-index:1;
 	font-family:Raleway, sans-serif;
 }
 
-#emailSubmit {
+#emailSubmit, #bookSubmit {
 	width:110px;
 	height:30px;
 	font-size:20px;
 }
 
-#emailSubmit:hover{
+#emailSubmit:hover, #bookSubmit:hover{
 	box-shadow:0px 0px 5px blue;
+}
+
+#map{
+	padding: 5px 5px 5px 5px;
+	box-shadow: 0px 0px 5px black;
+	height:300px;
+	width:500px;
+}
+.stock_area div{
+	display:inline;
+}
+
+#modal-form{
+	font-family:Raleway, sans-serif;
+}
+#modalButton {
+  margin-top:15px;
+  font-family:Raleway, sans-serif;
+  text-decoration: none;
+  background-color: white;
+  box-shadow:0px 0px 5px black;
+  padding-right:5px;
+  padding-left:5px;
+  color: #333333;
+  transition:linear 0.5s;
+}
+
+#modalButton:hover{
+	background-color:#ddd;
+	transition:linear 0.1s;
+}
+
+#playButton, #pauseButton{
+  margin-top:15px;
+  font-family:Raleway, sans-serif;
+  text-decoration: none;
+  background-color: #aaa;
+  box-shadow:0px 0px 5px black;
+  padding-right:5px;
+  padding-left:5px;
+  color: #333333;
+  pointer-events:none;
+  transition:linear 0.5s;
+}
+
+#playButton:hover, #pauseButton:hover{
+	background-color:#ddd !important;
+	transition:linear 0.1s !important;
 }
 </style>

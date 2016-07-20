@@ -60,6 +60,7 @@ d1=new Date();
 	document.getElementById("place").innerHTML = "Waterloo, ON "+curhour+":"+curminute;
 }
 
+
 function getActive(){
 		if (jQuery("body").is("#home_page")){ 
 		jQuery(home_tab).addClass("active");
@@ -100,6 +101,7 @@ function setIcon(weather){
 
 window.onload=function(){
 	d2 = new Date();
+	//google.maps.event.addDomListener(window, 'load', initialize);
 	getActive();
 	getInitialClock();
 	setIcon(weather_condition);
@@ -123,7 +125,15 @@ var weatherFunction = function(data) {
     weather_low2 = data.query.results.channel.item.forecast[1].low;
     weather_condition2 = data.query.results.channel.item.forecast[1].text;
 };
-
+/* puts the modal in a crazy spot
+	$(function() {
+$('a[href="#modal-form"]').click(function(event) {
+      $(this).modal({
+        fadeDuration: 250
+      });
+ });
+});
+*/
 jQuery(document).ready(function() {
 
 	jQuery('.main_tabs .tabs a').on('click', function(e)  {

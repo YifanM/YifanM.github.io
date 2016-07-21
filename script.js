@@ -162,4 +162,8 @@ jQuery(document).ready(function() {
 		break;
 	}
 });
+
+    var height = $('body').height();
+    $('#sidebar').height(height);
+
 });

@@ -172,8 +172,9 @@ body{
 	margin-left:5px;
 }
 #sidebar{
-	position:absolute;left:0px;top:52.5px;bottom:0px;
+	position:absolute;left:0px;top:52.5px;
 	width:140px;
+	height:100%;
 	background:linear-gradient(to right, #b3e6ff, #b3e6ff, transparent);
 }
 #sidebar_line{
@@ -320,5 +321,21 @@ z-index:1;
 #playButton:hover, #pauseButton:hover{
 	background-color:#ddd !important;
 	transition:linear 0.1s !important;
+}
+
+#bookResults a{
+	display:block;
+	padding-top:10px;
+	color:black;
+}
+
+#bookResults a:hover{
+	color:white;
+}
+
+#viewerCanvas{
+	/*box-shadow: 0px 0px 5px black;
+	width:600px;
+	height:500px;*/
 }
 </style>

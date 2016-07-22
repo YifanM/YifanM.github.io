@@ -206,7 +206,7 @@ function myRound(value, decimals){
 }
 
 function colourchange(num1, num2){
-	if (num1 >= num2) return "#00b300";
+	if (num1 > num2) return "#00b300";
 	else return "#ff0000";
 }
 

@@ -1,3 +1,6 @@
+var supportedTranslateLang;
+var supportedTranslateDir;
+
 jQuery(document).ready(function(){
 
 		startMap();
@@ -45,7 +48,14 @@ $('#bookForm').submit(function(event){
 		}
 			document.getElementById("bookResults").appendChild(newElement);
 			var smallElement = document.createElement("small");
+		if (data1.items[i].volumeInfo.description){
+			//window.alert(1);
 			smallElement.appendChild(document.createTextNode(data1.items[i].volumeInfo.description));
+		}
+		else{
+			//window.alert(2);
+			smallElement.appendChild(document.createTextNode("Description not available."));
+		}
 			document.getElementById("bookResults").appendChild(smallElement);
 		}
 	});
@@ -77,17 +87,118 @@ $('#inputCurrency').on('input', function(e){
 	//window.alert($(this).val());
 	e.preventDefault();
 	if ($.isNumeric($(this).val())){
+		//alert('http://api.fixer.io/latest?base='+$('#currencyInputType').val())
+		if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
+			document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+		}
+		else{
 		$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
 			var allRates = data1.rates; 
-			//document.getElementById('resultCurrency').innerHTML = (Number($(this).val())*Number(allRates.$('#currencyOutputType').val()).toString());
-			document.getElementById('resultCurrency').innerHTML = "not rdy yet";
+			var outputRate = $('#currencyOutputType').val();
+			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toString();
 		});
+	}
 	}
 	else {
 		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NAN)"
 	}
 });
 
+$('#currencyInputType').change(function(e){
+		e.preventDefault();
+	if ($.isNumeric($('#inputCurrency').val())){
+		//alert('http://api.fixer.io/latest?base='+$('#currencyInputType').val())
+		if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
+			document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+		}
+		else{
+		$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
+			var allRates = data1.rates; 
+			var outputRate = $('#currencyOutputType').val();
+			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toString();
+		});
+	}
+	}
+	else {
+		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NAN)"
+	}
+})
+
+$('#currencyOutputType').change(function(e){
+		e.preventDefault();
+	if ($.isNumeric($('#inputCurrency').val())){
+		//alert('http://api.fixer.io/latest?base='+$('#currencyInputType').val())
+		if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
+			document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+		}
+		else{
+		$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
+			var allRates = data1.rates; 
+			var outputRate = $('#currencyOutputType').val();
+			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toString();
+		});
+	}
+	}
+	else {
+		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NaN)"
+	}
+})
+
+$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a&ui=en', function(data1){
+	supportedTranslateLang = data1.langs;
+	supportedTranslateDir = data1.dirs;
+	var tempKey;
+	for (tempKey in data1.langs){ 
+		var optionElement = document.createElement('option');
+		if(tempKey == 'en'){
+			optionElement.setAttribute('selected', 'selected');
+		}
+		optionElement.setAttribute('value', supportedTranslateLang[tempKey]);
+		optionElement.appendChild(document.createTextNode(supportedTranslateLang[tempKey]));
+		document.getElementById('languageInputType').appendChild(optionElement);
+	}
+	for (tempKey in data1.langs){ 
+		var optionElement = document.createElement('option');
+		if(tempKey == 'fr'){
+			optionElement.setAttribute('selected', 'selected');
+		}
+		optionElement.setAttribute('value', supportedTranslateLang[tempKey]);
+		optionElement.appendChild(document.createTextNode(supportedTranslateLang[tempKey]));
+		document.getElementById('languageOutputType').appendChild(optionElement);
+	}
+});
+
+
+$('#translateButton').click(function(event){
+	event.preventDefault();
+	var from, to, tempKey;
+	for (tempKey in supportedTranslateLang){
+		if (supportedTranslateLang[tempKey]==$('#languageInputType').val()){
+			from = tempKey;
+		}
+		if (supportedTranslateLang[tempKey]==$('#languageOutputType').val()){
+			to = tempKey;
+		}
+	}
+	//alert(from+ to);
+	for (var i = 0; i < supportedTranslateDir.length; i++){
+		//alert(tempKey);
+		if (supportedTranslateDir[i]==(from+"-"+to)){
+			$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a&text=' + $('#inputLanguage').val() + "&lang=" + from + "-" + to, function(data1){
+				document.getElementById('resultLanguage').innerHTML = data1.text;
+			});
+			return;
+		}
+	}
+	document.getElementById('resultLanguage').innerHTML = supportedTranslateLang[from] + " to " + supportedTranslateLang[to] + " is not supported :(.";
+});
+
+
+/*
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview');
+*/
 });
 
 function myRound(value, decimals){
@@ -98,8 +209,6 @@ function colourchange(num1, num2){
 	if (num1 >= num2) return "#00b300";
 	else return "#ff0000";
 }
-
-
 
 function startMap(){
 	var coord = {lat: 43.47, lng: -80.5449};

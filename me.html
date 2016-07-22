@@ -57,15 +57,28 @@
 		<p>me</p>
 		<p>this is to test if gifs play</p>
 		<img id="testGif" crossOrigin="" src="http://i.imgur.com/GhHJ1tw.gif" rel:animated_src="http://i.imgur.com/GhHJ1tw.gif" rel:auto_play="0" rel:rubbable="0"></img>
-		<a href="javascript:;" onmousedown="gif1.play(); return false;" id="playButton">Play</a>
-		<a href="javascript:;" onmousedown="gif1.pause(); return false;" id="pauseButton">Pause</a> 
+		<a href="javascript:;" onmousedown="gif1.play(); return false;" class="playButton" id="playButton1">Play</a>
+		<a href="javascript:;" onmousedown="gif1.pause(); return false;" class="pauseButton" id="pauseButton1">Pause</a> 
 		<script>
 		var gif1= new SuperGif({gif:document.getElementById('testGif')}); //looks like this library set it up so it has to be here, otherwise it doesn't recognize gif1 in play and pause, oh well
 		gif1.load(function(){
-			document.getElementById('playButton').style.backgroundColor = "white";
-			document.getElementById('pauseButton').style.backgroundColor = "white";
-			document.getElementById('playButton').style.pointerEvents = "all";
-			document.getElementById('pauseButton').style.pointerEvents = "all";
+			document.getElementById('playButton1').style.backgroundColor = "white";
+			document.getElementById('pauseButton1').style.backgroundColor = "white";
+			document.getElementById('playButton1').style.pointerEvents = "all";
+			document.getElementById('pauseButton1').style.pointerEvents = "all";
+
+		});
+	</script>
+	<img id="testGif2" crossOrigin="" src="http://i.imgur.com/iCZtcqi.gif" rel:animated_src="http://i.imgur.com/iCZtcqi.gif" rel:auto_play="0" rel:rubbable="0"></img>
+	<a href="javascript:;" onmousedown="gif2.play(); return false;" class="playButton" id="playButton2">Play</a>
+	<a href="javascript:;" onmousedown="gif2.pause(); return false;" class="pauseButton" id="pauseButton2">Pause</a> 
+	<script>
+		var gif2= new SuperGif({gif:document.getElementById('testGif2')}); //looks like this library set it up so it has to be here, otherwise it doesn't recognize gif1 in play and pause, oh well
+		gif2.load(function(){
+			document.getElementById('playButton2').style.backgroundColor = "white";
+			document.getElementById('pauseButton2').style.backgroundColor = "white";
+			document.getElementById('playButton2').style.pointerEvents = "all";
+			document.getElementById('pauseButton2').style.pointerEvents = "all";
 
 		});
 	</script>

@@ -316,7 +316,7 @@ z-index:1;
 	transition:linear 0.1s;
 }
 */
-#playButton, #pauseButton{
+.playButton, .pauseButton{
   margin-top:15px;
   font-family:Raleway, sans-serif;
   text-decoration: none;
@@ -329,7 +329,7 @@ z-index:1;
   transition:linear 0.5s;
 }
 
-#playButton:hover, #pauseButton:hover{
+.playButton:hover, .pauseButton:hover{
 	background-color:#ddd !important;
 	transition:linear 0.1s !important;
 }

@@ -120,7 +120,7 @@ window.onload=function(){
 var weatherFunction = function(data) {
     weather_high = data.query.results.channel.item.forecast[0].high;
     weather_low = data.query.results.channel.item.forecast[0].low;
-    weather_condition = data.query.results.channel.item.forecast[1].text;
+    weather_condition = data.query.results.channel.item.forecast[0].text;
     weather_high2 = data.query.results.channel.item.forecast[1].high;
     weather_low2 = data.query.results.channel.item.forecast[1].low;
     weather_condition2 = data.query.results.channel.item.forecast[1].text;
@@ -135,6 +135,8 @@ $('a[href="#modal-form"]').click(function(event) {
 });
 */
 jQuery(document).ready(function() {
+
+	//console.log(Youtube.Search.list('id,snippet', {q:'dogs', maxResults:5}));
 
 	jQuery('.main_tabs .tabs a').on('click', function(e)  {
 		var currentAttrValue = jQuery(this).attr('href');

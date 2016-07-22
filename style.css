@@ -6,17 +6,27 @@ a:active {color:rgb(50,0,0); background-color:transparent; text-decoration: none
 
 @font-face{
 	font-family: 'Raleway';
-	src: url('Raleway-Regular.ttf');
+	src: url('fonts/Raleway-Regular.ttf');
+}
+
+@font-face{
+	font-family: 'AvantGarde';
+	src: url('fonts/ITCAvantGardePro-XLt.ttf');
+}
+
+@font-face{
+	font-family: 'AvantGardeBold';
+	src: url('fonts/ITCAvantGardePro-Bold.ttf');
 }
 
 @font-face{
 	font-family: 'Raleway_Light';
-	src: url('Raleway-Light.ttf');
+	src: url('fonts/Raleway-Light.ttf');
 }
 
 @font-face{
 	font-family: 'Raleway_Thin';
-	src: url('Raleway-Thin.ttf');
+	src: url('fonts/Raleway-Thin.ttf');
 }
 
 .main_tabs{
@@ -59,8 +69,8 @@ li.active a, li.active{
 }
 
 #head_name{
-	font-family:Raleway_Light, sans-serif;
-	position:absolute; top:-20px; left:9px;
+	font-family:AvantGarde, sans-serif;
+	position:absolute; top:-20px; left:7px;
 	font-size:30px;
 	font-weight:100;
 	z-index:1;
@@ -133,7 +143,7 @@ body{
 #clock_date{
 	font-family:Raleway_Thin, sans-serif;
 	font-weight:800;
-	position:absolute;top:18px;left:300px;
+	position:absolute;top:18px;left:160px;
 	opacity=1;
 	animation-duration:1s;
 	transition:opacity linear 0.3s;
@@ -141,7 +151,7 @@ body{
 #clock_newDate{
 	font-family:Raleway_Thin, sans-serif;
 	font-weight:800;
-	position:absolute;top:35px;left:300px;
+	position:absolute;top:35px;left:160px;
 	opacity=0;
 	transition:opacity linear 0.3s;
 	animation-duration: 1s;
@@ -150,7 +160,7 @@ body{
 #clock_time{
 	font-weight:500;
 	font-family:Raleway_Light, sans-serif;
-	position:absolute;top:18px;left:400px;
+	position:absolute;top:18px;left:260px;
 	opacity=1;
 	animation-duration:1s;
 	transition:opacity linear 0.3s;
@@ -158,7 +168,7 @@ body{
 #clock_newTime{
 	font-weight:500;
 	font-family:Raleway_Light, sans-serif;
-	position:absolute;top:35px;left:400px;
+	position:absolute;top:35px;left:260px;
 	opacity=0;
 	transition:opacity linear 0.3s;
 	animation-duration: 1s;
@@ -190,21 +200,21 @@ z-index:1;
 }
 
 #place{
-	position:absolute;left:532px;top:24px;
+	position:absolute;left:392px;top:24px;
 	font-family:Raleway_Light, sans-serif;
 }
 #weather{
 	font-family:Raleway_Light, sans-serif;
-	position:absolute;left:500px;top:13px;
+	position:absolute;left:360px;top:13px;	
 	font-size:12px;
 }
 #weatherCondition{
 	font-family:Raleway_Thin, sans-serif;
 	font-size:16px;
-	position:absolute;left:532px;top:10px;
+	position:absolute;left:392px;top:10px;
 }
 #weatherIcon{
-	position:absolute;left:460px;top:12px;
+	position:absolute;left:320px;top:12px;
 }
 /*#weatherNext{
 	font-family:Raleway_Light, sans-serif;
@@ -213,7 +223,7 @@ z-index:1;
 	font-family:Raleway_Light, sans-serif;
 }*/
 #yahoo_logo{
-	position:absolute;left:529px;top:33px;
+	position:absolute;left:389px;top:33px;
 }
 #lightboxArea{ 
 	width:150px;
@@ -288,6 +298,7 @@ z-index:1;
 #modal-form{
 	font-family:Raleway, sans-serif;
 }
+/*
 #modalButton {
   margin-top:15px;
   font-family:Raleway, sans-serif;
@@ -304,7 +315,7 @@ z-index:1;
 	background-color:#ddd;
 	transition:linear 0.1s;
 }
-
+*/
 #playButton, #pauseButton{
   margin-top:15px;
   font-family:Raleway, sans-serif;
@@ -323,10 +334,32 @@ z-index:1;
 	transition:linear 0.1s !important;
 }
 
+.myButton{
+  margin-top:15px;
+  font-family:Raleway, sans-serif;
+  text-decoration: none;
+  background-color: white;
+  box-shadow:0px 0px 5px black;
+  padding-right:5px;
+  padding-left:5px;
+  color: #333333 !important;
+  transition:linear 0.5s !important;
+}
+
+.myButton:hover{
+	background-color:#ddd !important;
+	transition:linear 0.1s !important;
+}
+
 #bookResults a{
 	display:block;
 	padding-top:10px;
 	color:black;
+}
+
+#bookResults div{
+	padding-top:10px;
+	display:block;
 }
 
 #bookResults a:hover{
@@ -334,8 +367,9 @@ z-index:1;
 }
 
 #viewerCanvas{
-	/*box-shadow: 0px 0px 5px black;
-	width:600px;
-	height:500px;*/
+	box-shadow: 0px 0px 5px black;
+	width:800px;
+	height:500px;
+	display:none;
 }
 </style>

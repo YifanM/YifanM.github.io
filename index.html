@@ -1,23 +1,24 @@
 	<!DOCTYPE html> <!--524972871189-8087rai3o5jlji2642dichdc7b4eb574.apps.googleusercontent.com
 -->
 <!--http://www.computersciencezone.org/50-most-useful-apis-for-developers/-->
-	<html>
-	<head>
-		<link rel="icon" href="favicon.ico">
-			<title>Yifan Ma</title>
-			<link rel="stylesheet" type="text/css" href="style.css" media="screen">
-			<link rel="stylesheet" type="text/css" href="jquery-modal-master/jquery.modal.css"> 
-			<script type="text/javascript" src="jquery-3.1.0.min.js"> </script> 
-			<script type="text/javascript" src="script.js"></script>
-			<script type="text/javascript" src="mainAPI.js"></script>
-			<script type="text/javascript" src="jquery-modal-master/jquery.modal.min.js"></script>
-			<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
-			<script type="text/javascript" src="https://www.google.com/books/jsapi.js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
-			<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
-			<div id="head_name">
-				<p>Yifan Ma</p>
-			</div>
-			<div id="head_box"></div>
+<html>
+<head>
+	<link rel="icon" href="favicon.ico">
+	<title>Yifan Ma</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="jquery-modal-master/jquery.modal.css"> 
+	<script type="text/javascript" src="jquery-3.1.0.min.js"> </script> 
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="mainAPI.js"></script>
+	<script type="text/javascript" src="jquery-modal-master/jquery.modal.min.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
+	<script type="text/javascript" src="https://www.google.com/books/jsapi.js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
+	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
+	<div id="head_name">
+		<p>Yifan Ma</p>
+	</div>
+	<div id="head_box"></div>
+			<!--
 			<div class="head_circle">
 				<div id="circle_1">
 				</div>
@@ -26,30 +27,31 @@
 				<dic id="circle_3">
 				</div>
 			</div>
-			<div id="clock_date"></div>
-			<div id="clock_time"></div>
-			<div id="clock_newDate"></div>
-			<div id="clock_newTime"></div>
-			<small id="place">Waterloo, ON</small>
-			<div id="weather"></div>
-			<div id="weatherCondition"></div>
-			<img id="weatherIcon" height="30" width="30"></img>
-			<div id="weatherNext"></div>
-			<div id="weatherConditionNext"></div>
-			<a href="https://www.yahoo.com/?ilc=401" target="_blank" id="yahoo_logo"> <img src="https://poweredby.yahoo.com/purple.png" height="20" width="90"> </a>
-			<div id="header_line"></div>
-			<nav>
-				<div class="main_tabs">
-					<ul class="tabs">
-						<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
-						<li id="projects_tab"><a href="projects.html">Other Work</a></li>
-						<li id="documents_tab"><a href="documents.html">Documents</a></li>
-						<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
-						<li id="me_tab"><a href="me.html">About Me</a></li>
-						<li id="home_tab"><a href="index.html">Home</a></li>
-					</ul>
-				</div>
-			</nav>
+		-->
+		<div id="clock_date"></div>
+		<div id="clock_time"></div>
+		<div id="clock_newDate"></div>
+		<div id="clock_newTime"></div>
+		<small id="place">Waterloo, ON</small>
+		<div id="weather"></div>
+		<div id="weatherCondition"></div>
+		<img id="weatherIcon" height="30" width="30"></img>
+		<div id="weatherNext"></div>
+		<div id="weatherConditionNext"></div>
+		<a href="https://www.yahoo.com/?ilc=401" target="_blank" id="yahoo_logo"> <img src="https://poweredby.yahoo.com/purple.png" height="20" width="90"> </a>
+		<div id="header_line"></div>
+		<nav>
+			<div class="main_tabs">
+				<ul class="tabs">
+					<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
+					<li id="projects_tab"><a href="projects.html">Other Work</a></li>
+					<li id="documents_tab"><a href="documents.html">Documents</a></li>
+					<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
+					<li id="me_tab"><a href="me.html">About Me</a></li>
+					<li id="home_tab"><a href="index.html">Home</a></li>
+				</ul>
+			</div>
+		</nav>
 	</head>
 	<body id="home_page"><!-- separate clock into date and time, make them both transition by sliding/fading -->
 		<div id="sidebar">
@@ -59,44 +61,45 @@
 		</div>
 		<div id="sidebar_line">
 		</div>
-			<div class="text">
-				<small>Use Chrome only pls</small>
-				<small>Please only view this page on your browser's maximum size right now.... I harded coded some positions lol....</small>
-				<h1>Maybe I will consider upgrading to actual web hosting, so I can do the comments section storing in a text file, and the auto-mail if it handles a mail server. Bluehost looks good right now</h1>
+		<div class="text">
+			<small>Use Chrome only pls</small>
+			<small>Please only view this page on your browser's maximum size right now.... I harded coded some positions lol....</small>
+			<h1>Maybe I will consider upgrading to actual web hosting, so I can do the comments section storing in a text file, and the auto-mail if it handles a mail server. Bluehost looks good right now</h1>
 
-				<p>I'm hosted with GitHub Pages. add weather icons, check the animation on the clock when window is not focused, animatate something with jquery for practise (as clock was done with css), fill dashboard with apis, add comments/emailing to try out php, add image gallery of indesign stuff to other work, consider using more than 1 font for the entire page LOL, make the next api for xml lol</p>
+			<p>I'm hosted with GitHub Pages. add weather icons, check the animation on the clock when window is not focused, animatate something with jquery for practise (as clock was done with css), fill dashboard with apis, add comments/emailing to try out php, add image gallery of indesign stuff to other work, consider using more than 1 font for the entire page LOL, make the next api for xml lol</p>
 
-				<!--https://developers.google.com/books/docs/v1/getting_started-->
+			<!--https://developers.google.com/books/docs/v1/getting_started-->
 
 
-						<div class="stock_area"> <!--can consider using a table to align this --> 
-							<div id="goog"></div>
-							<span></span>
-							<br>
-							<div id="aapl"></div>
-							<span></span>
-							<br>
-							<div id="fb"></div>
-							<span></span>
-							<br>
-							<div id="twtr"></div>
-							<span></span>
-						</div>
-						<small>All market data from Quandl. All weather icons from Alessio Atzeni.</small>
-				<!--<p>Thank you to Elated, Insparational Pixels, @Pranav C Balan, @Gaurav Aggarwal, @Qwertiy ... http://www.greywyvern.com/?post=337</p>-->
-				<div id="calendar">
-				</div>
-				<div id="map">
-				</div>
+			<div class="stock_area"> <!--can consider using a table to align this --> 
+				<div id="goog"></div>
+				<span></span>
 				<br>
-				<a href="#modal-form" rel="modal:open" id="modalButton">Open Modal</a> <!--make this look like a button-->
-					<form id="modal-form" style="display:none;" class="modal">
-					<p>Here is a modal window.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin malesuada purus eget varius. Suspendisse imperdiet sagittis cursus. Fusce at orci vitae quam blandit sagittis. Cras gravida mi eget accumsan congue. Vestibulum malesuada quam in ex pulvinar, eu feugiat libero elementum. Aenean tristique lectus orci, a sagittis odio tincidunt vitae. Maecenas consectetur velit vel metus aliquam ullamcorper. Sed condimentum enim a odio accumsan, nec consequat enim tempus. Mauris vel dui non libero vulputate porta. Fusce aliquam aliquam pretium. Suspendisse potenti. Aliquam vitae lacus eros. Mauris at pretium nisi. Quisque eu suscipit metus. Aliquam venenatis massa arcu, et ullamcorper quam varius pulvinar. Nam sagittis non erat posuere porttitor. In neque tellus, ultrices at convallis non, mattis ac ligula. Sed quis porta augue, ac auctor enim. In lacus tellus, luctus nec mauris ac, dictum varius turpis. Sed ex turpis, sodales nec lacus ac, venenatis laoreet erat. Suspendisse eget metus suscipit, fermentum nisl sed, viverra dolor. Quisque quis enim sem. Nam a sapien enim. Cras auctor fermentum lorem non gravida. Fusce risus nisi, tincidunt eget auctor ac, elementum quis eros. Cras accumsan ut orci sit amet bibendum. Nunc non est ultricies, efficitur neque et, laoreet magna. Maecenas tempor sodales diam et aliquet. Nulla facilisi. Etiam sed placerat erat. Maecenas dolor neque, consectetur ac molestie sit amet, posuere non nulla. Donec a vehicula mauris, et maximus enim. Nam bibendum convallis felis. Sed vestibulum est non leo dapibus, ut laoreet enim dignissim. Nam lobortis luctus mauris, quis mattis mauris aliquet egestas. Sed eu ante odio. Suspendisse accumsan lectus gravida purus ultricies pellentesque. Fusce ligula nulla, molestie et ultrices vitae, faucibus sit amet eros. Mauris ornare pulvinar euismod. Aliquam ut felis et erat dapibus tempus eget et erat. Aenean hendrerit sapien a dictum blandit. Fusce at sapien malesuada nunc viverra commodo. In sit amet gravida velit. Etiam ac iaculis magna. Aliquam erat volutpat. Proin dolor enim, sodales non lacus eget, vestibulum tincidunt elit. Cras at aliquam mauris. Vivamus quis tincidunt mi. Integer tempor mauris id ante sollicitudin, eget gravida neque dapibus. Nullam non tristique nulla. Duis id orci pellentesque, dignissim mauris ac, dignissim nibh. Ut id volutpat risus. Donec at orci sit amet ipsum elementum euismod nec in quam. Sed sed felis quis erat imperdiet tincidunt non a ligula. Nunc posuere quis nunc ac laoreet. Etiam at hendrerit justo. Suspendisse potenti. Nunc quis ligula fringilla, dignissim sapien sed, finibus dui.</p>
-				</form>
-				<h3>Read a Google Book!</h3>
-				<form id="bookForm">
-					<br>
+				<div id="aapl"></div>
+				<span></span>
+				<br>
+				<div id="fb"></div>
+				<span></span>
+				<br>
+				<div id="twtr"></div>
+				<span></span>
+			</div>
+			<small>All market data from Quandl. All weather icons from Alessio Atzeni.</small>
+			<!--<p>Thank you to Elated, Insparational Pixels, @Pranav C Balan, @Gaurav Aggarwal, @Qwertiy ... http://www.greywyvern.com/?post=337</p>-->
+			<div id="calendar">
+			</div>
+			<div id="map">
+			</div>
+			<br>
+			<a href="#modal-form" rel="modal:open" id="modalButton" class="myButton">Open Modal</a> <!--make this look like a button-->
+			<form id="modal-form" style="display:none;" class="modal">
+				<p>Here is a modal window.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin malesuada purus eget varius. Suspendisse imperdiet sagittis cursus. Fusce at orci vitae quam blandit sagittis. Cras gravida mi eget accumsan congue. Vestibulum malesuada quam in ex pulvinar, eu feugiat libero elementum. Aenean tristique lectus orci, a sagittis odio tincidunt vitae. Maecenas consectetur velit vel metus aliquam ullamcorper. Sed condimentum enim a odio accumsan, nec consequat enim tempus. Mauris vel dui non libero vulputate porta. Fusce aliquam aliquam pretium. Suspendisse potenti. Aliquam vitae lacus eros. Mauris at pretium nisi. Quisque eu suscipit metus. Aliquam venenatis massa arcu, et ullamcorper quam varius pulvinar. Nam sagittis non erat posuere porttitor. In neque tellus, ultrices at convallis non, mattis ac ligula. Sed quis porta augue, ac auctor enim. In lacus tellus, luctus nec mauris ac, dictum varius turpis. Sed ex turpis, sodales nec lacus ac, venenatis laoreet erat. Suspendisse eget metus suscipit, fermentum nisl sed, viverra dolor. Quisque quis enim sem. Nam a sapien enim. Cras auctor fermentum lorem non gravida. Fusce risus nisi, tincidunt eget auctor ac, elementum quis eros. Cras accumsan ut orci sit amet bibendum. Nunc non est ultricies, efficitur neque et, laoreet magna. Maecenas tempor sodales diam et aliquet. Nulla facilisi. Etiam sed placerat erat. Maecenas dolor neque, consectetur ac molestie sit amet, posuere non nulla. Donec a vehicula mauris, et maximus enim. Nam bibendum convallis felis. Sed vestibulum est non leo dapibus, ut laoreet enim dignissim. Nam lobortis luctus mauris, quis mattis mauris aliquet egestas. Sed eu ante odio. Suspendisse accumsan lectus gravida purus ultricies pellentesque. Fusce ligula nulla, molestie et ultrices vitae, faucibus sit amet eros. Mauris ornare pulvinar euismod. Aliquam ut felis et erat dapibus tempus eget et erat. Aenean hendrerit sapien a dictum blandit. Fusce at sapien malesuada nunc viverra commodo. In sit amet gravida velit. Etiam ac iaculis magna. Aliquam erat volutpat. Proin dolor enim, sodales non lacus eget, vestibulum tincidunt elit. Cras at aliquam mauris. Vivamus quis tincidunt mi. Integer tempor mauris id ante sollicitudin, eget gravida neque dapibus. Nullam non tristique nulla. Duis id orci pellentesque, dignissim mauris ac, dignissim nibh. Ut id volutpat risus. Donec at orci sit amet ipsum elementum euismod nec in quam. Sed sed felis quis erat imperdiet tincidunt non a ligula. Nunc posuere quis nunc ac laoreet. Etiam at hendrerit justo. Suspendisse potenti. Nunc quis ligula fringilla, dignissim sapien sed, finibus dui.</p>
+			</form>
+			<h3>Read a Google Book!</h3>
+			<img src="https://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.png"></img>
+			<form id="bookForm">
+				<br>
 				<input type="text" maxlength="100" size="30" id="bookKeywords">
 				<br>
 				<br>
@@ -106,84 +109,85 @@
 			<br>
 			<div id="bookResults">
 			</div>
-						<div id="viewerCanvas"></div>
-						<!-- youtube API here ?? how to search for video IDS?? -->
-						<form id="currencyArea">
-							http://fixer.io/
-							<span>Convert </span><input type="text" id="inputCurrency" required><span> from</span>
-							<select id="currencyInputType" required>
-								<option value="AUD">AUD</option>
-								<option value="BGN">BGN</option>
-								<option value="BRL">BRL</option>
-								<option value="CAD" selected="selected">CAD</option>
-								<option value="CHF">CHF</option>
-								<option value="CNY">CNY</option>
-								<option value="CZK">CZK</option>
-								<option value="DKK">DKK</option>
-								<option value="EUR">EUR</option>
-								<option value="CAD">CAD</option>
-								<option value="GBP">GBP</option>
-								<option value="HKD">HKD</option>
-								<option value="HRK">HRK</option>
-								<option value="HUF">HUF</option>
-								<option value="IDR">IDR</option>
-								<option value="ILS">ILS</option>
-								<option value="INR">INR</option>
-								<option value="JPY">JPY</option>
-								<option value="KRW">KRW</option>
-								<option value="MXN">MXN</option>
-								<option value="MYR">MYR</option>
-								<option value="NOK">NOK</option>
-								<option value="NZD">NZD</option>
-								<option value="PHP">PHP</option>
-								<option value="PLN">PLN</option>
-								<option value="RON">RON</option>
-								<option value="RUB">RUB</option>
-								<option value="SEK">SEK</option>
-								<option value="SGD">SGD</option>
-								<option value="THB">THB</option>
-								<option value="TRY">TRY</option>
-								<option value="USD">USD</option>
-								<option value="ZAR">ZAR</option>
-							</select>
-							<span>to</span>
-							<select id="currencyOutputType" required>
-								<option value="AUD">AUD</option>
-								<option value="BGN">BGN</option>
-								<option value="BRL">BRL</option>
-								<option value="CAD">CAD</option>
-								<option value="CHF">CHF</option>
-								<option value="CNY">CNY</option>
-								<option value="CZK">CZK</option>
-								<option value="DKK">DKK</option>
-								<option value="EUR">EUR</option>
-								<option value="CAD">CAD</option>
-								<option value="GBP">GBP</option>
-								<option value="HKD">HKD</option>
-								<option value="HRK">HRK</option>
-								<option value="HUF">HUF</option>
-								<option value="IDR">IDR</option>
-								<option value="ILS">ILS</option>
-								<option value="INR">INR</option>
-								<option value="JPY">JPY</option>
-								<option value="KRW">KRW</option>
-								<option value="MXN">MXN</option>
-								<option value="MYR">MYR</option>
-								<option value="NOK">NOK</option>
-								<option value="NZD">NZD</option>
-								<option value="PHP">PHP</option>
-								<option value="PLN">PLN</option>
-								<option value="RON">RON</option>
-								<option value="RUB">RUB</option>
-								<option value="SEK">SEK</option>
-								<option value="SGD">SGD</option>
-								<option value="THB">THB</option>
-								<option value="TRY">TRY</option>
-								<option value="USD" selected="selected">USD</option>
-								<option value="ZAR">ZAR</option>
-							</select>
-							<span id="resultCurrency"></span>
-						</form>
+			<div id="viewerCanvas"></div>
+			<a href="i just want the href so it turns into the clickable cursor on hover but for some reason, blank or # break the transition this is preventDefault'd in the js so anything can go here" id="closeBookButton" class="myButton">Close Book</a>
+			<!-- youtube API here ?? how to search for video IDS?? -->
+			<form id="currencyArea">
+				http://fixer.io/
+				<span>Convert </span><input type="text" id="inputCurrency" required><span> from</span>
+				<select id="currencyInputType" required>
+					<option value="AUD">AUD</option>
+					<option value="BGN">BGN</option>
+					<option value="BRL">BRL</option>
+					<option value="CAD" selected="selected">CAD</option>
+					<option value="CHF">CHF</option>
+					<option value="CNY">CNY</option>
+					<option value="CZK">CZK</option>
+					<option value="DKK">DKK</option>
+					<option value="EUR">EUR</option>
+					<option value="CAD">CAD</option>
+					<option value="GBP">GBP</option>
+					<option value="HKD">HKD</option>
+					<option value="HRK">HRK</option>
+					<option value="HUF">HUF</option>
+					<option value="IDR">IDR</option>
+					<option value="ILS">ILS</option>
+					<option value="INR">INR</option>
+					<option value="JPY">JPY</option>
+					<option value="KRW">KRW</option>
+					<option value="MXN">MXN</option>
+					<option value="MYR">MYR</option>
+					<option value="NOK">NOK</option>
+					<option value="NZD">NZD</option>
+					<option value="PHP">PHP</option>
+					<option value="PLN">PLN</option>
+					<option value="RON">RON</option>
+					<option value="RUB">RUB</option>
+					<option value="SEK">SEK</option>
+					<option value="SGD">SGD</option>
+					<option value="THB">THB</option>
+					<option value="TRY">TRY</option>
+					<option value="USD">USD</option>
+					<option value="ZAR">ZAR</option>
+				</select>
+				<span>to</span>
+				<select id="currencyOutputType" required>
+					<option value="AUD">AUD</option>
+					<option value="BGN">BGN</option>
+					<option value="BRL">BRL</option>
+					<option value="CAD">CAD</option>
+					<option value="CHF">CHF</option>
+					<option value="CNY">CNY</option>
+					<option value="CZK">CZK</option>
+					<option value="DKK">DKK</option>
+					<option value="EUR">EUR</option>
+					<option value="CAD">CAD</option>
+					<option value="GBP">GBP</option>
+					<option value="HKD">HKD</option>
+					<option value="HRK">HRK</option>
+					<option value="HUF">HUF</option>
+					<option value="IDR">IDR</option>
+					<option value="ILS">ILS</option>
+					<option value="INR">INR</option>
+					<option value="JPY">JPY</option>
+					<option value="KRW">KRW</option>
+					<option value="MXN">MXN</option>
+					<option value="MYR">MYR</option>
+					<option value="NOK">NOK</option>
+					<option value="NZD">NZD</option>
+					<option value="PHP">PHP</option>
+					<option value="PLN">PLN</option>
+					<option value="RON">RON</option>
+					<option value="RUB">RUB</option>
+					<option value="SEK">SEK</option>
+					<option value="SGD">SGD</option>
+					<option value="THB">THB</option>
+					<option value="TRY">TRY</option>
+					<option value="USD" selected="selected">USD</option>
+					<option value="ZAR">ZAR</option>
+				</select>
+				<span id="resultCurrency"></span>
+			</form>
 			</div><!--
 			<script src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
@@ -193,9 +197,9 @@
         }, true);
     </script>
     <div id="cse" style="width:100%;">Loading...</div>-->
-	</body>
-	</html>
+</body>
+</html>
 
-	<!--trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a-->
+<!--trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a-->
 <!--https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a?text=hello?lang=en-kr-->
 <!--Powered by Yandex.Translate, link to translate.yandex.com--> 

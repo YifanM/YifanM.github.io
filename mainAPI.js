@@ -31,11 +31,18 @@ $('#bookForm').submit(function(event){
 	$.getJSON(("https://www.googleapis.com/books/v1/volumes?q="+$('#bookKeywords').val().replace(" ", "+")+"?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"), function(data1){
 		document.getElementById("bookResults").innerHTML = "Hits: " + data1.totalItems;
 		for (var i=0; i<data1.totalItems; i++){
+			if (data1.items[i].accessInfo.embeddable&&data1.items[i].volumeInfo.industryIdentifiers.length>1){
 			var newElement = document.createElement('a');
 			newElement.setAttribute('href', "#");
 			newElement.setAttribute('class', "bookLink");
-			$(newElement).data("ISBN", data1.items[i].volumeInfo.industryIdentifiers[1].identifier);
+			$(newElement).data("ISBN", data1.items[i].volumeInfo.industryIdentifiers[0].identifier);
 			newElement.appendChild(document.createTextNode(data1.items[i].volumeInfo.title + ", " + data1.items[i].volumeInfo.authors[0]));
+		}
+		else{
+			var newElement = document.createElement('div');
+			$(newElement).data("ISBN", data1.items[i].volumeInfo.industryIdentifiers[0].identifier);
+			newElement.appendChild(document.createTextNode(data1.items[i].volumeInfo.title + ", " + data1.items[i].volumeInfo.authors[0]));
+		}
 			document.getElementById("bookResults").appendChild(newElement);
 			var smallElement = document.createElement("small");
 			smallElement.appendChild(document.createTextNode(data1.items[i].volumeInfo.description));
@@ -44,34 +51,41 @@ $('#bookForm').submit(function(event){
 	});
 });
 
-/*
-	google.books.load();
-      function initialize() {
-        var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-        viewer.load('ISBN:9780156012195');
-      }
-      google.books.setOnLoadCallback(initialize);
+$('#closeBookButton').click(function(event){
+	event.preventDefault();
+	//document.getElementById("viewerCanvas").style.boxShadow="0px 0px 0px black";
+    document.getElementById("viewerCanvas").style.display = 'none';
+})
 
 google.books.load();
-      function initialize() {
-        var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-        viewer.load('ISBN:0738531367');
-      }
-      google.books.setOnLoadCallback(initialize);*/
+
 
 $(document).on('click', ".bookLink", function(e){
 	//window.alert($(this).text($('a')).data('ISBN'));
-	/*google.books.load();
-      function initialize() {
+      document.getElementById("viewerCanvas").style.display="block";
         var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-        viewer.load('ISBN:' + $(this).text($('a')).data('ISBN'));
-      }
-      google.books.setOnLoadCallback(initialize);*/
-      document.getElementById("viewerCanvas").style.boxShadow="0px 0px 5px black";
-      document.getElementById("viewerCanvas").style.width="600px";
-      document.getElementById("viewerCanvas").style.height="500px";
-      window.alert("doesn't work right now, what should happen is that preview you see already loaded, but for your book and in a modal");
-      	e.preventDefault();
+        viewer.load('ISBN:' + $(this).data('ISBN'));
+      //window.alert("doesn't work right now, what should happen is that preview you see already loaded, but for your book and in a modal");
+       	var height = $('body').height();
+    if (height > $('#sidebar').height()){
+    $('#sidebar').height(height);
+}
+      e.preventDefault();
+});
+
+$('#inputCurrency').on('input', function(e){
+	//window.alert($(this).val());
+	e.preventDefault();
+	if ($.isNumeric($(this).val())){
+		$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
+			var allRates = data1.rates; 
+			//document.getElementById('resultCurrency').innerHTML = (Number($(this).val())*Number(allRates.$('#currencyOutputType').val()).toString());
+			document.getElementById('resultCurrency').innerHTML = "not rdy yet";
+		});
+	}
+	else {
+		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NAN)"
+	}
 });
 
 });

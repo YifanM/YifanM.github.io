@@ -164,6 +164,7 @@ jQuery(document).ready(function() {
 });
 
     var height = $('body').height();
+    if (height > $('#sidebar').height()){
     $('#sidebar').height(height);
-
+}
 });

@@ -193,6 +193,62 @@ $('#translateButton').click(function(event){
 	document.getElementById('resultLanguage').innerHTML = supportedTranslateLang[from] + " to " + supportedTranslateLang[to] + " is not supported :(.";
 });
 
+$('#defineButton').click(function(event){
+	document.getElementById('resultDefinition').innerHTML = "";
+	$.ajax({
+		url: 'https://wordsapiv1.p.mashape.com/words/'+$('#inputDefinition').val()+'/definitions',
+		headers: {"X-Mashape-Key":"ALeEbaVUrImshfRPGSrgi0VsZ9WOp15Vr87jsnOougxYW3TozA", "Accept":"application/json"},
+		success : function(result){
+			//console.log(result);
+			for (var i = 0; i < result.definitions.length; i++){
+				//console.log(result.definitions[i]);
+				var newElement = document.createElement('p');
+				newElement.appendChild(document.createTextNode(result.definitions[i].partOfSpeech + ', ' + result.definitions[i].definition));
+				document.getElementById('resultDefinition').appendChild(newElement);
+			}
+		}
+	})
+	event.preventDefault();
+});
+
+$('#thesaurusButton').click(function(event){
+	document.getElementById('resultThesaurus').innerHTML = "";
+	$.getJSON('https://words.bighugelabs.com/api/2/07cb8c12ca84fb8b9466bc8be0c36096/' + $('#inputThesaurus').val() + '/json', function(data1){
+		var temp;
+		for (temp in data1){
+			var newElement = document.createElement('p');
+			newElement.appendChild(document.createTextNode("As a(n) " + temp));
+			document.getElementById('resultThesaurus').appendChild(newElement);
+			var synElement = document.createElement('div');
+			synElement.appendChild(document.createTextNode('Synonyms: '));
+			//console.log(data1[temp].syn);
+			for (var j = 0; j < data1[temp].syn.length; j++){
+								if (j < data1[temp].syn.length-1){
+				synElement.appendChild(document.createTextNode(data1[temp].syn[j] + ', '));
+			}
+			else {
+				synElement.appendChild(document.createTextNode(data1[temp].syn[j] + ' '));
+			}
+			}
+			document.getElementById('resultThesaurus').appendChild(synElement);
+			var antElement = document.createElement('div');
+			synElement.appendChild(document.createTextNode('Antonyms: '));
+			if (data1[temp].ant){
+			for (var j = 0; j < data1[temp].ant.length; j++){
+				if (j < data1[temp].ant.length-1){
+				synElement.appendChild(document.createTextNode(data1[temp].ant[j] + ', '));
+			}
+			else {
+				synElement.appendChild(document.createTextNode(data1[temp].ant[j] + ' '));
+			}
+			}
+		}
+			document.getElementById('resultThesaurus').appendChild(antElement);
+		}
+	});
+	event.preventDefault();
+});
+
 
 /*
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

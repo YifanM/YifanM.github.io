@@ -95,7 +95,7 @@ $('#inputCurrency').on('input', function(e){
 		$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
 			var allRates = data1.rates; 
 			var outputRate = $('#currencyOutputType').val();
-			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toString();
+			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
 		});
 	}
 	}
@@ -115,7 +115,7 @@ $('#currencyInputType').change(function(e){
 		$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
 			var allRates = data1.rates; 
 			var outputRate = $('#currencyOutputType').val();
-			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toString();
+			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
 		});
 	}
 	}
@@ -135,13 +135,17 @@ $('#currencyOutputType').change(function(e){
 		$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
 			var allRates = data1.rates; 
 			var outputRate = $('#currencyOutputType').val();
-			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toString();
+			document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
 		});
 	}
 	}
 	else {
 		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NaN)"
 	}
+})
+
+$('#currencyArea').submit(function(){
+	return false;
 })
 
 $.getJSON('https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a&ui=en', function(data1){
@@ -193,6 +197,13 @@ $('#translateButton').click(function(event){
 	document.getElementById('resultLanguage').innerHTML = supportedTranslateLang[from] + " to " + supportedTranslateLang[to] + " is not supported :(.";
 });
 
+$('#translateArea').keypress(function(event){
+	if (event.keyCode == 13){
+			event.preventDefault();
+		$('#translateButton').trigger('click');
+	}
+});
+
 $('#defineButton').click(function(event){
 	document.getElementById('resultDefinition').innerHTML = "";
 	$.ajax({
@@ -211,6 +222,13 @@ $('#defineButton').click(function(event){
 	event.preventDefault();
 });
 
+$('#defineArea').keypress(function(event){
+	if (event.keyCode == 13){
+		event.preventDefault();
+		$('#defineButton').trigger('click');
+	}
+})
+
 $('#thesaurusButton').click(function(event){
 	document.getElementById('resultThesaurus').innerHTML = "";
 	$.getJSON('https://words.bighugelabs.com/api/2/07cb8c12ca84fb8b9466bc8be0c36096/' + $('#inputThesaurus').val() + '/json', function(data1){
@@ -219,11 +237,11 @@ $('#thesaurusButton').click(function(event){
 			var newElement = document.createElement('p');
 			newElement.appendChild(document.createTextNode("As a(n) " + temp));
 			document.getElementById('resultThesaurus').appendChild(newElement);
-			var synElement = document.createElement('div');
+			var synElement = document.createElement('p');
 			synElement.appendChild(document.createTextNode('Synonyms: '));
 			//console.log(data1[temp].syn);
 			for (var j = 0; j < data1[temp].syn.length; j++){
-								if (j < data1[temp].syn.length-1){
+			if (j < data1[temp].syn.length-1){
 				synElement.appendChild(document.createTextNode(data1[temp].syn[j] + ', '));
 			}
 			else {
@@ -231,15 +249,15 @@ $('#thesaurusButton').click(function(event){
 			}
 			}
 			document.getElementById('resultThesaurus').appendChild(synElement);
-			var antElement = document.createElement('div');
-			synElement.appendChild(document.createTextNode('Antonyms: '));
+			var antElement = document.createElement('p');
+			antElement.appendChild(document.createTextNode('Antonyms: '));
 			if (data1[temp].ant){
 			for (var j = 0; j < data1[temp].ant.length; j++){
 				if (j < data1[temp].ant.length-1){
-				synElement.appendChild(document.createTextNode(data1[temp].ant[j] + ', '));
+				antElement.appendChild(document.createTextNode(data1[temp].ant[j] + ', '));
 			}
 			else {
-				synElement.appendChild(document.createTextNode(data1[temp].ant[j] + ' '));
+				antElement.appendChild(document.createTextNode(data1[temp].ant[j] + ' '));
 			}
 			}
 		}
@@ -248,6 +266,13 @@ $('#thesaurusButton').click(function(event){
 	});
 	event.preventDefault();
 });
+
+$('#thesaurusArea').keypress(function(event){
+	if (event.keyCode==13){
+		event.preventDefault();
+		$('#thesaurusButton').trigger('click');
+	}
+})
 
 
 /*

@@ -372,4 +372,11 @@ z-index:1;
 	height:500px;
 	display:none;
 }
+#mainColumns{
+	columns: 2;
+}
+
+#inputLanguage{
+	font-family:Raleway, sans-serif;
+}
 </style>

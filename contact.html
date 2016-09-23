@@ -8,9 +8,9 @@
 			<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
 			<div id="head_name">
 				<p>Yifan Ma</p>
-			</div><!--
+			</div>
 			<div id="head_box"></div>
-			<div class="head_circle">
+			<!--div class="head_circle">
 				<div id="circle_1">
 				</div>
 				<div id="circle_2">
@@ -46,13 +46,14 @@
 	<body id="contact_page"><!-- separate clock into date and time, make them both transition by sliding/fading -->
 		<div id="sidebar">
 			<div id="sidebarContent">
+			Pretend a comments section is here.
 			</div>
 		</div>
 		<div id="sidebar_line">
 		</div>
 		<div class="text">
 				<h2>Contact Me</h2>
-				<form method="post" action="email_form.php" id="emailForm">
+				<form method="post" action="email_form.html" id="emailForm">
 					<label>Name</label>
 					<br>
 					<br>

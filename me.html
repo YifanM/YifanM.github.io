@@ -12,7 +12,8 @@
 	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
 	<div id="head_name">
 		<p>Yifan Ma</p>
-	</div><!--
+	</div>
+		<div id="head_box"></div><!--
 	<div id="head_box"></div>
 	<div class="head_circle">
 		<div id="circle_1">
@@ -36,28 +37,32 @@
 		<div id="header_line"></div>
 	<nav>
 			<div class="main_tabs">
-					<ul class="tabs">
-						<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
-						<li id="projects_tab"><a href="projects.html">Other Work</a></li>
-						<li id="documents_tab"><a href="documents.html">Documents</a></li>
-						<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
-						<li id="me_tab"><a href="me.html">About Me</a></li>
-						<li id="home_tab"><a href="index.html">Home</a></li>
-					</ul>
-				</div>
+				<ul class="tabs">
+					<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
+					<li id="projects_tab"><a href="projects.html">Other Work</a></li>
+					<li id="documents_tab"><a href="documents.html">Documents</a></li>
+					<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
+					<li id="me_tab"><a href="me.html">About Me</a></li>
+					<li id="home_tab"><a href="index.html">Home</a></li>
+				</ul>
+			</div>
 	</nav>
 </head>
 <body id="me_page">
-	<div id="sidebar">
-		<div id="sidebarContent">
+		<div id="sidebar">
+			<div id="sidebarContent">
+				Pretend a comments section is here.
 			</div>
-	</div>
+		</div>
 	<div id="sidebar_line"></div>
 	<div class="text">
-		<p>me</p>
-		<img src='pics/IMG_1064.JPG' height='300' width-'400'></img>
-		<p>this is to test if gifs play</p>
-		<img id="testGif" crossOrigin="" src="http://i.imgur.com/GhHJ1tw.gif" rel:animated_src="http://i.imgur.com/GhHJ1tw.gif" rel:auto_play="0" rel:rubbable="0"></img>
+				<p style='width:25%; float:left'>Hey, my name's Yifan Ma and I'm studying software engineering at the University of Waterloo. As of Fall 2016, I just started my second year. Here's a few random things about me. If you're looking for information about my coding experiences or academics, please see Documents or Other Work instead.</p>
+						<img src='pics/IMG_1064.JPG' height='180' width-'280' style='float:left;margin-top:18px;margin-left:10px'></img>
+						<br><br><br><br><br><br><br><br><br><br><!--lol...-->
+		<p style='clear:both; width:50%; float:left'>My favourite colour is green. My favourite food is sushi. About the only sport I'm good at is badminton. I enjoy computer games such as League of Legends. Another common pastime of mine is reading Reddit. I first began coding when I was 16 years old in my high school's computer science class.</p>
+
+			<!--small><small>Note: I would have liked to make this smaller. I can't use a local source because I get a XMLHTTPRequest error, so I'm sourcing from Imgur. That might be the reason any styles I try to apply just don't apply.</small></small>
+		<img id="testGif" src="http://i.imgur.com/GhHJ1tw.gif" rel:auto_play="0" rel:rubbable="0"></img>
 		<a href="javascript:;" onmousedown="gif1.play(); return false;" class="playButton" id="playButton1">Play</a>
 		<a href="javascript:;" onmousedown="gif1.pause(); return false;" class="pauseButton" id="pauseButton1">Pause</a> 
 		<script>
@@ -70,7 +75,7 @@
 
 		});
 	</script>
-	<img id="testGif2" crossOrigin="" src="http://i.imgur.com/iCZtcqi.gif" rel:animated_src="http://i.imgur.com/iCZtcqi.gif" rel:auto_play="0" rel:rubbable="0"></img>
+	<img id="testGif2" src="http://i.imgur.com/iCZtcqi.gif" rel:auto_play="0" rel:rubbable="0"></img>
 	<a href="javascript:;" onmousedown="gif2.play(); return false;" class="playButton" id="playButton2">Play</a>
 	<a href="javascript:;" onmousedown="gif2.pause(); return false;" class="pauseButton" id="pauseButton2">Pause</a> 
 	<script>
@@ -82,7 +87,7 @@
 			document.getElementById('pauseButton2').style.pointerEvents = "all";
 
 		});
-	</script>
+	</script-->
 
 	</div>
 </body>

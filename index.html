@@ -1,34 +1,20 @@
-	<!DOCTYPE html> <!--524972871189-8087rai3o5jlji2642dichdc7b4eb574.apps.googleusercontent.com
--->
-<!--http://www.computersciencezone.org/50-most-useful-apis-for-developers/-->
+<!DOCTYPE html>
 <html>
-<head>
-	<link rel="icon" href="favicon.ico">
-	<title>Yifan Ma</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="jquery-modal-master/jquery.modal.css"> 
-	<script type="text/javascript" src="jquery-3.1.0.min.js"> </script> 
-	<script type="text/javascript" src="script.js"></script>
-	<script type="text/javascript" src="mainAPI.js"></script>
-	<script type="text/javascript" src="jquery-modal-master/jquery.modal.min.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
-	<script type="text/javascript" src="https://www.google.com/books/jsapi.js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
-	<!--script async src="https://www.google-analytics.com/analytics.js"></script-->
-	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
-	<div id="head_name">
-		<p>Yifan Ma</p>
-	</div>
-	<div id="head_box"></div>
-			<!--
-			<div class="head_circle">
-				<div id="circle_1">
-				</div>
-				<div id="circle_2">
-				</div>
-				<dic id="circle_3">
-				</div>
-			</div>
-		-->
+	<head>
+		<title>Yifan Ma</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="resources/libraries/jquery-modal-master/jquery.modal.css"> 
+		<script type="text/javascript" src="resources/libraries/jquery-3.1.0.min.js"> </script> 
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="mainAPI.js"></script>
+		<script type="text/javascript" src="resources/libraries/jquery-modal-master/jquery.modal.min.js"></script>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
+		<script type="text/javascript" src="https://www.google.com/books/jsapi.js?key=AIzaSyDivKjpnLNRiR9pQnE8ToLAGEb-XhyiQEk"></script>
+		<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
+		<div id="head_name">
+			<p>Yifan Ma</p>
+		</div>
+		<div id="head_box"></div>
 		<div id="clock_date"></div>
 		<div id="clock_time"></div>
 		<div id="clock_newDate"></div>
@@ -44,7 +30,6 @@
 		<nav>
 			<div class="main_tabs">
 				<ul class="tabs">
-					<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
 					<li id="projects_tab"><a href="projects.html">Other Work</a></li>
 					<li id="documents_tab"><a href="documents.html">Documents</a></li>
 					<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
@@ -54,20 +39,23 @@
 			</div>
 		</nav>
 	</head>
-	<body id="home_page"><!-- separate clock into date and time, make them both transition by sliding/fading -->
+	<body id="home_page">
 		<div id="sidebar">
 			<div id="sidebarContent">
-				Pretend a comments section is here.
 			</div>
 		</div>
 		<div id="sidebar_line">
 		</div>
 		<div class="text">
-			<p>Hey, welcome to my website (in progress). Everything here, except things like javascript libraries, APIs, fonts, icons etc., was written from scratch (ie. I didn't copy-paste anything although I imported things and used tutorials). This is my first time using CSS and it's all original, so I know some parts could look nicer. I'm also missing a lot of content. These will be my priorities in future updates.</p> 
-			<p>I'm hosted with GitHub Pages and as such, all the source can be viewed <a href='https://github.com/YifanM/YifanM.github.io'>here</a>. There are some things I wanted to add which I believe won't work with GitHub Pages so I might move to a regular web hoster later. Please only use the latest Chrome and at least a resolution of about 1280*720 as it might not work for other settings- I coded only considering my current configuration.</p>
-			<p>The following is me trying out some stuff.</p>
-			<!--div id="mainColumns"-->
-
+			<p>
+				My first website. It's a pretty big mess because I was new and I was playing around with a bunch of stuff.
+			</p>
+			<p>
+				It has long been deprecated and most content has been removed. Please go to "" for my current website.
+			</p>
+			<p>
+				As of April 25, 2017, the APIs used on this page (weather, maps, books, stocks, currency, translator, dictionary, thesaurus) still seem to work.
+			</p>
 			<div id="map">
 			</div>
 			<div class="stock_area">
@@ -83,11 +71,10 @@
 				<div id="twtr"></div>
 				<span></span>
 			</div>
-
 			<form id="currencyArea">			
 				<span>Convert </span><input type="text" id="inputCurrency" required><span> from</span>
 				<select id="currencyInputType" required>
-					<option value="AUD">AUD</option> <!--lol my first time doing this, my second time is below... much better to dynamically create the dropdown from a test api call... -->
+					<option value="AUD">AUD</option>
 					<option value="BGN">BGN</option>
 					<option value="BRL">BRL</option>
 					<option value="CAD" selected="selected">CAD</option>
@@ -160,9 +147,7 @@
 				<span id="resultCurrency"></span>
 			</form>
 
-			<div id='stopColumn'>			</div>
-
-			<!--a href="http://translate.yandex.com" target="_blank">Powered by Yandex.Translate</a-->
+			<div id='stopColumn'></div>
 			<form id="translateArea">			
 				<span>Translator </span><textarea maxlength='130' type="text" id="inputLanguage" cols="35" rows="5" required></textarea><span> from</span>
 				<select id="languageInputType" required>
@@ -173,7 +158,6 @@
 				<a href="qwerty" class="myButton" id="translateButton">Translate</a>
 				<textarea readonly type='text' cols='35' rows='5' id="resultLanguage"></textarea>
 			</form>
-			<!--http://www.dictionaryapi.com/register/index.htm-->
 			<form id="defineArea">			
 				<span>Dictionary </span><input type="text" id="inputDefinition" required>
 				<a href="qwerty" class="myButton" id="defineButton">Define</a>
@@ -184,16 +168,12 @@
 				<a href="qwerty" class="myButton" id="thesaurusButton">Find</a>
 				<textarea readonly cols='40' rows='8' id="resultThesaurus"></textarea>
 			</form>
-
-			<!--https://developers.google.com/youtube/iframe_api_reference#Examples-->
-			<!--https://developers.google.com/analytics/devguides/collection/analyticsjs/-->
 			<div id='bookArea'>
-			<span style='float:left'>Google Books </span>
+				<span style='float:left'>Google Books </span>
 				<form id="bookForm">
 					<input type="text" maxlength="100" size="30" id="bookKeywords">
 					<input type="submit" value="Search" id="bookSubmit">
 				</form>
-				 <small><small>functionality works, but css issues with heights, currently trying to fix</small></small>
 				<br><br>
 				<div id="bookResults">
 				</div>
@@ -201,27 +181,23 @@
 				<a href="#" id="closeBookButton" class="myButton">Close Book</a>
 			</div>
 			<br><br>
-		</body>
-		<footer>
-			<a href="#modal-form" rel="modal:open" id="modalButton" class="myButton">List of things I used</a>
-			<form id="modal-form" style="display:none;" class="modal">
-				<p>This is where I put my list of services and IP I used for this page. So far:</p>
-				<ul>
-					<li>Weather information : Yahoo</li>
-					<li>Weather icons : Alessio Atzeni</li>
-					<li>Market data : Quandl </li>
-					<li>Google Maps : Google </li>
-					<li>Google Books : Google</li>
-					<li>Currency data : Fixer.io</li>
-					<li>Translator service: Yandex Translate</li>
-					<li>Dictionary service: Mashape Words API</li>
-					<li>Thesaurus service: Big Huge Labs </li>
-				</ul>
-				<p>And of course the Stack Overflow community and various other online resources.</p> 
-			</form>
-		</footer>
-		</html>
-
-		<!--trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a-->
-		<!--https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a?text=hello?lang=en-kr-->
-		<!--Powered by Yandex.Translate, link to translate.yandex.com--> 
+		</div>
+	</body>
+	<footer>
+		<a href="#modal-form" rel="modal:open" id="modalButton" class="myButton">List of things I used</a>
+		<form id="modal-form" style="display:none;" class="modal">
+			<p>This is where I put my list of services I used for this page. So far:</p>
+			<ul>
+				<li>Weather information : Yahoo</li>
+				<li>Weather icons : Alessio Atzeni</li>
+				<li>Market data : Quandl </li>
+				<li>Google Maps : Google </li>
+				<li>Google Books : Google</li>
+				<li>Currency data : Fixer.io</li>
+				<li>Translator service: Yandex Translate</li>
+				<li>Dictionary service: Mashape Words API</li>
+				<li>Thesaurus service: Big Huge Labs </li>
+			</ul>
+		</form>
+	</footer>
+</html>

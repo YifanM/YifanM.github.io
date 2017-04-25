@@ -47,20 +47,16 @@ jQuery(document).ready(function(){
 					newElement.appendChild(document.createTextNode(data1.items[i].volumeInfo.title + ", " + data1.items[i].volumeInfo.authors[0]));
 				}
 				document.getElementById("bookResults").appendChild(newElement);
-				//console.log(newElement);
 				var smallElement = document.createElement("small");
 				if (data1.items[i].volumeInfo.description){
-			//window.alert(1);
-			smallElement.appendChild(document.createTextNode(data1.items[i].volumeInfo.description));
-		}
-		else{
-			//window.alert(2);
-			smallElement.appendChild(document.createTextNode("Description not available."));
-		}
-		document.getElementById("bookResults").appendChild(smallElement);
-		//console.log(smallElement);
-	}
-});
+					smallElement.appendChild(document.createTextNode(data1.items[i].volumeInfo.description));
+				}
+				else{
+					smallElement.appendChild(document.createTextNode("Description not available."));
+				}
+				document.getElementById("bookResults").appendChild(smallElement);
+			}
+		});
 		var height = $('body').height();
 		if (height > $('#sidebar').height()){
 			$('#sidebar').height(height);
@@ -69,55 +65,50 @@ jQuery(document).ready(function(){
 
 	$('#closeBookButton').click(function(event){
 		event.preventDefault();
-	//document.getElementById("viewerCanvas").style.boxShadow="0px 0px 0px black";
-	document.getElementById("viewerCanvas").style.display = 'none';
-	var myNode = document.getElementById("bookResults");
-	while (myNode.firstChild) {
-		myNode.removeChild(myNode.firstChild);
-	}
-	$('body').height(825.33);
-	$('sidebar').height(825.33);
-})
+		document.getElementById("viewerCanvas").style.display = 'none';
+		var myNode = document.getElementById("bookResults");
+		while (myNode.firstChild) {
+			myNode.removeChild(myNode.firstChild);
+		}
+		$('body').height(825.33);
+		$('sidebar').height(825.33);
+	})
 
 	google.books.load();
 
 
 	$(document).on('click', ".bookLink", function(e){
-	//window.alert($(this).text($('a')).data('ISBN'));
-	document.getElementById("viewerCanvas").style.display="block";
-	var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-	viewer.load('ISBN:' + $(this).data('ISBN'));
-      //window.alert("doesn't work right now, what should happen is that preview you see already loaded, but for your book and in a modal");
-      var height = $('body').height();
-      if (height > $('#sidebar').height()){
-      	$('#sidebar').height(height);
-      }
-      e.preventDefault();
-  });
+		document.getElementById("viewerCanvas").style.display="block";
+		var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+		viewer.load('ISBN:' + $(this).data('ISBN'));
+		var height = $('body').height();
+		if (height > $('#sidebar').height()){
+			$('#sidebar').height(height);
+		}
+		e.preventDefault();
+	});
 
 	$('#inputCurrency').on('input', function(e){
-	//window.alert($(this).val());
-	e.preventDefault();
-	if ($(this).val() == ''){
-		document.getElementById('resultCurrency').innerHTML = '';
-	}
-	else if ($.isNumeric($(this).val())){
-		//alert('http://api.fixer.io/latest?base='+$('#currencyInputType').val())
-		if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
-			document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+		e.preventDefault();
+		if ($(this).val() == ''){
+			document.getElementById('resultCurrency').innerHTML = '';
 		}
-		else{
-			$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
-				var allRates = data1.rates; 
-				var outputRate = $('#currencyOutputType').val();
-				document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
-			});
+		else if ($.isNumeric($(this).val())){
+			if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
+				document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+			}
+			else{
+				$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
+					var allRates = data1.rates; 
+					var outputRate = $('#currencyOutputType').val();
+					document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
+				});
+			}
 		}
-	}
-	else {
-		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NAN)";
-	}
-});
+		else {
+			document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NAN)";
+		}
+	});
 
 	$('#currencyInputType').change(function(e){
 		e.preventDefault();
@@ -125,22 +116,21 @@ jQuery(document).ready(function(){
 			document.getElementById('resultCurrency').innerHTML = '';
 		}
 		else if ($.isNumeric($('#inputCurrency').val())){
-		//alert('http://api.fixer.io/latest?base='+$('#currencyInputType').val())
-		if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
-			document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+			if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
+				document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+			}
+			else{
+				$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
+					var allRates = data1.rates; 
+					var outputRate = $('#currencyOutputType').val();
+					document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
+				});
+			}
 		}
-		else{
-			$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
-				var allRates = data1.rates; 
-				var outputRate = $('#currencyOutputType').val();
-				document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
-			});
+		else {
+			document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NAN)";
 		}
-	}
-	else {
-		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NAN)";
-	}
-})
+	})
 
 	$('#currencyOutputType').change(function(e){
 		e.preventDefault();
@@ -148,22 +138,21 @@ jQuery(document).ready(function(){
 			document.getElementById('resultCurrency').innerHTML = '';
 		}
 		else if ($.isNumeric($('#inputCurrency').val())){
-		//alert('http://api.fixer.io/latest?base='+$('#currencyInputType').val())
-		if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
-			document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+			if ($('#currencyOutputType').val() == $('#currencyInputType').val()){
+				document.getElementById('resultCurrency').innerHTML = $('#inputCurrency').val();
+			}
+			else{
+				$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
+					var allRates = data1.rates; 
+					var outputRate = $('#currencyOutputType').val();
+					document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
+				});
+			}
 		}
-		else{
-			$.getJSON(('http://api.fixer.io/latest?base='+$('#currencyInputType').val()), function(data1){
-				var allRates = data1.rates; 
-				var outputRate = $('#currencyOutputType').val();
-				document.getElementById('resultCurrency').innerHTML = (Number($('#inputCurrency').val())*Number(allRates[outputRate])).toFixed(2).toString();
-			});
+		else {
+			document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NaN)";
 		}
-	}
-	else {
-		document.getElementById('resultCurrency').innerHTML = "Andrew Morton's hair (input was NaN)";
-	}
-})
+	})
 
 	$('#currencyArea').submit(function(){
 		return false;
@@ -205,18 +194,16 @@ jQuery(document).ready(function(){
 				to = tempKey;
 			}
 		}
-	//alert(from+ to);
-	for (var i = 0; i < supportedTranslateDir.length; i++){
-		//alert(tempKey);
-		if (supportedTranslateDir[i]==(from+"-"+to)){
-			$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a&text=' + $('#inputLanguage').val() + "&lang=" + from + "-" + to, function(data1){
-				document.getElementById('resultLanguage').innerHTML = data1.text;
-			});
-			return;
+		for (var i = 0; i < supportedTranslateDir.length; i++){
+			if (supportedTranslateDir[i]==(from+"-"+to)){
+				$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160721T194149Z.9f33ada0f2796a4d.7b1273bb0e8fa4e32c28e0797d895be73ba3e10a&text=' + $('#inputLanguage').val() + "&lang=" + from + "-" + to, function(data1){
+					document.getElementById('resultLanguage').innerHTML = data1.text;
+				});
+				return;
+			}
 		}
-	}
-	document.getElementById('resultLanguage').innerHTML = supportedTranslateLang[from] + " to " + supportedTranslateLang[to] + " is not supported :(.";
-});
+		document.getElementById('resultLanguage').innerHTML = supportedTranslateLang[from] + " to " + supportedTranslateLang[to] + " is not supported :(.";
+	});
 
 	$('#translateArea').keypress(function(event){
 		if (event.keyCode == 13){
@@ -231,19 +218,16 @@ jQuery(document).ready(function(){
 			url: 'https://wordsapiv1.p.mashape.com/words/'+$('#inputDefinition').val()+'/definitions',
 			headers: {"X-Mashape-Key":"ALeEbaVUrImshfRPGSrgi0VsZ9WOp15Vr87jsnOougxYW3TozA", "Accept":"application/json"},
 			success : function(result){
-			//console.log(result);
-			var newElement = '';
-			for (var i = 0; i < result.definitions.length; i++){
-				//console.log(result.definitions[i]);
-				newElement = newElement.concat(result.definitions[i].partOfSpeech + ', ' + result.definitions[i].definition);
-				if (i != result.definitions.length-1){
-					newElement = newElement.concat('\n\n');
+				var newElement = '';
+				for (var i = 0; i < result.definitions.length; i++){
+					newElement = newElement.concat(result.definitions[i].partOfSpeech + ', ' + result.definitions[i].definition);
+					if (i != result.definitions.length-1){
+						newElement = newElement.concat('\n\n');
+					}
 				}
-				//newElement.appendChild(document.createTextNode(result.definitions[i].partOfSpeech + ', ' + result.definitions[i].definition));
+				document.getElementById('resultDefinition').innerHTML = newElement;
 			}
-			document.getElementById('resultDefinition').innerHTML = newElement;
-		}
-	})
+		})
 		event.preventDefault();
 	});
 
@@ -257,50 +241,34 @@ jQuery(document).ready(function(){
 	$('#thesaurusButton').click(function(event){
 		document.getElementById('resultThesaurus').innerHTML = "";
 		$.getJSON('https://words.bighugelabs.com/api/2/07cb8c12ca84fb8b9466bc8be0c36096/' + $('#inputThesaurus').val() + '/json', function(data1){
-			var temp;
-			//console.log(data1);				
+			var temp;			
 			var newElement = '';
 			for (temp in data1){
-
 				newElement = newElement.concat('As a(n) ' + temp + '\n\n' + 'Synonyms: ');
-				/*var newElement = document.createElement('p');
-				newElement.appendChild(document.createTextNode("As a(n) " + temp));
-				document.getElementById('resultThesaurus').appendChild(newElement);
-				var synElement = document.createElement('p');
-				synElement.appendChild(document.createTextNode('Synonyms: '));*/
-			//console.log(data1[temp].syn);
-			if (data1[temp].syn){
-				for (var j = 0; j < data1[temp].syn.length; j++){
-					if (j < data1[temp].syn.length-1){
-					//synElement.appendChild(document.createTextNode(data1[temp].syn[j] + ', '));
-					newElement = newElement.concat(data1[temp].syn[j] + ', ');
-				}
-				else {
-					//synElement.appendChild(document.createTextNode(data1[temp].syn[j] + ' '));
-					newElement = newElement.concat(data1[temp].syn[j]);
-				}
-			}
-		}
-		newElement = newElement.concat('\n\n' + 'Antonyms: ' + '\n\n');;
-			/*document.getElementById('resultThesaurus').appendChild(synElement);
-			var antElement = document.createElement('p');
-			antElement.appendChild(document.createTextNode('Antonyms: '));*/
-			if (data1[temp].ant){
-				for (var j = 0; j < data1[temp].ant.length; j++){
-					if (j < data1[temp].ant.length-1){
-						//antElement.appendChild(document.createTextNode(data1[temp].ant[j] + ', '));
-						newElement = newElement.concat(data1[temp].ant[j] + ', ');
+				if (data1[temp].syn){
+					for (var j = 0; j < data1[temp].syn.length; j++){
+						if (j < data1[temp].syn.length-1){
+							newElement = newElement.concat(data1[temp].syn[j] + ', ');
+						}
+						else {
+							newElement = newElement.concat(data1[temp].syn[j]);
+						}
 					}
-					else {
-						//antElement.appendChild(document.createTextNode(data1[temp].ant[j] + ' '));
-						newElement = newElement.concat(data1[temp].ant[j] + ', ');
+				}
+				newElement = newElement.concat('\n\n' + 'Antonyms: ' + '\n\n');;
+				if (data1[temp].ant){
+					for (var j = 0; j < data1[temp].ant.length; j++){
+						if (j < data1[temp].ant.length-1){
+							newElement = newElement.concat(data1[temp].ant[j] + ', ');
+						}
+						else {
+							newElement = newElement.concat(data1[temp].ant[j] + ', ');
+						}
 					}
 				}
 			}
-			//document.getElementById('resultThesaurus').appendChild(antElement);
-		}
-		document.getElementById('resultThesaurus').innerHTML = newElement;
-	});
+			document.getElementById('resultThesaurus').innerHTML = newElement;
+		});
 		event.preventDefault();
 	});
 
@@ -310,13 +278,6 @@ jQuery(document).ready(function(){
 			$('#thesaurusButton').trigger('click');
 		}
 	})
-
-
-/*
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
-*/
 });
 
 function myRound(value, decimals){

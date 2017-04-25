@@ -1,6 +1,3 @@
-# YifanM.github.io
+My first website. It's a pretty big mess because I was new and I was playing around with a bunch of stuff.
 
-
-get rid of the head circles, and start adding real positioning to the rest of the head
-
-notice the two new fonts - use them!
+It has long been deprecated and most content has been removed. Please go to "" for my current website.

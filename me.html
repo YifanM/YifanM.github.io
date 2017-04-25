@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="icon" href="favicon.ico">
-	<title>Yifan Ma</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen"> 
-	<script type="text/javascript" src="libgif-js-master/libgif.js"></script>
-	<script type="text/javascript" src="libgif-js-master/rubbable.js"></script>
-	<script type="text/javascript" src="jquery-3.1.0.min.js"></script> 
-	<script type="text/javascript" src="ytScript.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
-	<div id="head_name">
-		<p>Yifan Ma</p>
-	</div>
-		<div id="head_box"></div><!--
-	<div id="head_box"></div>
-	<div class="head_circle">
-		<div id="circle_1">
+	<head>
+		<title>Yifan Ma</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen"> 
+		<script type="text/javascript" src="resources/libraries/jquery-3.1.0.min.js"></script> 
+		<script type="text/javascript" src="script.js"></script>
+		<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
+		<div id="head_name">
+			<p>Yifan Ma</p>
 		</div>
-		<div id="circle_2">
-		</div>
-		<dic id="circle_3">
-		</div>
-	</div>-->
+		<div id="head_box"></div>
 		<div id="clock_date"></div>
 		<div id="clock_time"></div>
 		<div id="clock_newDate"></div>
@@ -35,10 +22,9 @@
 		<div id="weatherConditionNext"></div>
 		<a href="https://www.yahoo.com/?ilc=401" target="_blank" id="yahoo_logo"> <img src="https://poweredby.yahoo.com/purple.png" height="20" width="90"> </a>
 		<div id="header_line"></div>
-	<nav>
+		<nav>
 			<div class="main_tabs">
 				<ul class="tabs">
-					<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
 					<li id="projects_tab"><a href="projects.html">Other Work</a></li>
 					<li id="documents_tab"><a href="documents.html">Documents</a></li>
 					<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
@@ -46,49 +32,16 @@
 					<li id="home_tab"><a href="index.html">Home</a></li>
 				</ul>
 			</div>
-	</nav>
-</head>
-<body id="me_page">
+		</nav>
+	</head>
+	<body id="me_page">
 		<div id="sidebar">
 			<div id="sidebarContent">
-				Pretend a comments section is here.
 			</div>
 		</div>
-	<div id="sidebar_line"></div>
-	<div class="text">
-				<p style='width:25%; float:left'>Hey, my name's Yifan Ma and I'm studying software engineering at the University of Waterloo. As of Fall 2016, I just started my second year. Here's a few random things about me. If you're looking for information about my coding experiences or academics, please see Documents or Other Work instead.</p>
-						<img src='pics/IMG_1064.JPG' height='180' width-'280' style='float:left;margin-top:18px;margin-left:10px'></img>
-						<br><br><br><br><br><br><br><br><br><br><!--lol...-->
-		<p style='clear:both; width:50%; float:left'>My favourite colour is green. My favourite food is sushi. About the only sport I'm good at is badminton. I enjoy computer games such as League of Legends. Another common pastime of mine is reading Reddit. I first began coding when I was 16 years old in my high school's computer science class.</p>
-
-			<!--small><small>Note: I would have liked to make this smaller. I can't use a local source because I get a XMLHTTPRequest error, so I'm sourcing from Imgur. That might be the reason any styles I try to apply just don't apply.</small></small>
-		<img id="testGif" src="http://i.imgur.com/GhHJ1tw.gif" rel:auto_play="0" rel:rubbable="0"></img>
-		<a href="javascript:;" onmousedown="gif1.play(); return false;" class="playButton" id="playButton1">Play</a>
-		<a href="javascript:;" onmousedown="gif1.pause(); return false;" class="pauseButton" id="pauseButton1">Pause</a> 
-		<script>
-		var gif1= new SuperGif({gif:document.getElementById('testGif')}); //looks like this library set it up so it has to be here, otherwise it doesn't recognize gif1 in play and pause, oh well
-		gif1.load(function(){
-			document.getElementById('playButton1').style.backgroundColor = "white";
-			document.getElementById('pauseButton1').style.backgroundColor = "white";
-			document.getElementById('playButton1').style.pointerEvents = "all";
-			document.getElementById('pauseButton1').style.pointerEvents = "all";
-
-		});
-	</script>
-	<img id="testGif2" src="http://i.imgur.com/iCZtcqi.gif" rel:auto_play="0" rel:rubbable="0"></img>
-	<a href="javascript:;" onmousedown="gif2.play(); return false;" class="playButton" id="playButton2">Play</a>
-	<a href="javascript:;" onmousedown="gif2.pause(); return false;" class="pauseButton" id="pauseButton2">Pause</a> 
-	<script>
-		var gif2= new SuperGif({gif:document.getElementById('testGif2')}); //looks like this library set it up so it has to be here, otherwise it doesn't recognize gif1 in play and pause, oh well
-		gif2.load(function(){
-			document.getElementById('playButton2').style.backgroundColor = "white";
-			document.getElementById('pauseButton2').style.backgroundColor = "white";
-			document.getElementById('playButton2').style.pointerEvents = "all";
-			document.getElementById('pauseButton2').style.pointerEvents = "all";
-
-		});
-	</script-->
-
-	</div>
-</body>
+		<div id="sidebar_line"></div>
+		<div class="text">
+			<p>Please go to "" for some basic information about myself.</p>
+		</div>
+	</body>
 </html>

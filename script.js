@@ -83,34 +83,31 @@ function getActive(){
 }
 
 function setIcon(weather){
-	if (weather == "Hail") {document.getElementById("weatherIcon").src ="weather-icons/hail.svg";}
-	else if (weather.indexOf ("Thunderstorm") > -1) {document.getElementById("weatherIcon").src ="weather-icons/storm.svg";}
-	else if (weather.indexOf ("Rain") > -1 || weather.indexOf("Drizzle") > -1 || weather.indexOf("Showers") > -1) {document.getElementById("weatherIcon").src ="weather-icons/rain.svg";}
-	else if (weather == "Heavy Snow") {document.getElementById("weatherIcon").src ="weather-icons/snowstorm.svg";}
-	else if (weather.indexOf ("Snow") > -1) {document.getElementById("weatherIcon").src ="weather-icons/snowing.svg";}
-	else if (weather == "Cloudy") {document.getElementById("weatherIcon").src ="weather-icons/cloudy.svg";}
+	if (weather == "Hail") {document.getElementById("weatherIcon").src ="resources/weather-icons/hail.svg";}
+	else if (weather.indexOf ("Thunderstorm") > -1) {document.getElementById("weatherIcon").src ="resources/weather-icons/storm.svg";}
+	else if (weather.indexOf ("Rain") > -1 || weather.indexOf("Drizzle") > -1 || weather.indexOf("Showers") > -1) {document.getElementById("weatherIcon").src ="resources/weather-icons/rain.svg";}
+	else if (weather == "Heavy Snow") {document.getElementById("weatherIcon").src ="resources/weather-icons/snowstorm.svg";}
+	else if (weather.indexOf ("Snow") > -1) {document.getElementById("weatherIcon").src ="resources/weather-icons/snowing.svg";}
+	else if (weather == "Cloudy") {document.getElementById("weatherIcon").src ="resources/weather-icons/cloudy.svg";}
 	else if (weather == "Partly Cloudy" || weather == "Mostly Cloudy"){
-		if (d3.getHours() < 6 || d3.getHours() > 21) {document.getElementById("weatherIcon").src = "weather-icons/partly moony.svg";}
-		else {document.getElementById("weatherIcon").src = "weather-icons/partly sunny.svg";}
+		if (d3.getHours() < 6 || d3.getHours() > 21) {document.getElementById("weatherIcon").src = "resources/weather-icons/partly moony.svg";}
+		else {document.getElementById("weatherIcon").src = "resources/weather-icons/partly sunny.svg";}
 	}
 	else{
-		if (d3.getHours() < 6 || d3.getHours() > 21) {document.getElementById("weatherIcon").src ="weather-icons/nighttime.svg";}
-		else {document.getElementById("weatherIcon").src ="weather-icons/sunny.svg";}
+		if (d3.getHours() < 6 || d3.getHours() > 21) {document.getElementById("weatherIcon").src ="resources/weather-icons/nighttime.svg";}
+		else {document.getElementById("weatherIcon").src ="resources/weather-icons/sunny.svg";}
 	} 
 }
 
 window.onload=function(){
 	d2 = new Date();
 	d3 = new Date();
-	//google.maps.event.addDomListener(window, 'load', initialize);
 	getActive();
 	getInitialClock();
 	setIcon(weather_condition);
 	jQuery("#lightbox").hide();
 	document.getElementById("weather").innerHTML = weather_high + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low; 
 	document.getElementById("weatherCondition").innerHTML = weather_condition;
-	//document.getElementById("weatherNext").innerHTML = weather_high2 + " " + String.fromCharCode(176) + "C" + "<br>" + weather_low2; 
-	//document.getElementById("weatherConditionNext").innerHTML = weather_condition2;
 	document.body.style.opacity=1;
 	document.getElementById("clock_newDate").style.opacity=0;
 	document.getElementById("clock_newTime").style.opacity=0;	
@@ -126,18 +123,8 @@ var weatherFunction = function(data) {
 	weather_low2 = data.query.results.channel.item.forecast[1].low;
 	weather_condition2 = data.query.results.channel.item.forecast[1].text;
 };
-/* puts the modal in a crazy spot
-	$(function() {
-$('a[href="#modal-form"]').click(function(event) {
-      $(this).modal({
-        fadeDuration: 250
-      });
- });
-});
-*/
-jQuery(document).ready(function() {
 
-	//console.log(Youtube.Search.list('id,snippet', {q:'dogs', maxResults:5}));
+jQuery(document).ready(function() {
 
 	jQuery('.main_tabs .tabs a').on('click', function(e)  {
 		var currentAttrValue = jQuery(this).attr('href');

@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="icon" href="favicon.ico">
-	<title>Yifan Ma</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="jquery-modal-master/jquery.modal.css"> 
-	<script type="text/javascript" src="jquery-3.1.0.min.js"> </script> 
-	<script type="text/javascript" src="script.js"></script>
-	<script type='text/javascript' src='lightbox.js'></script>
-	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
-	<div id="head_name">
-		<p>Yifan Ma</p>
-	</div>
-	<div id="head_box"></div>
-			<!--
-			<div class="head_circle">
-				<div id="circle_1">
-				</div>
-				<div id="circle_2">
-				</div>
-				<dic id="circle_3">
-				</div>
-			</div>
-		-->
+	<head>
+		<title>Yifan Ma</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<script type="text/javascript" src="resources/libraries/jquery-3.1.0.min.js"> </script> 
+		<script type="text/javascript" src="script.js"></script>
+		<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(0) where text='waterloo, on, ca') and u='c'&format=json&callback=weatherFunction"></script>
+		<div id="head_name">
+			<p>Yifan Ma</p>
+		</div>
+		<div id="head_box"></div>
 		<div id="clock_date"></div>
 		<div id="clock_time"></div>
 		<div id="clock_newDate"></div>
@@ -38,7 +25,6 @@
 		<nav>
 			<div class="main_tabs">
 				<ul class="tabs">
-					<li id="contact_tab"><a href="contact.html">Contact Me</a></li>
 					<li id="projects_tab"><a href="projects.html">Other Work</a></li>
 					<li id="documents_tab"><a href="documents.html">Documents</a></li>
 					<li id="uwaterloo_tab"><a href="uwaterloo.html">UWaterloo</a></li>
@@ -51,58 +37,12 @@
 	<body id="projects_page">
 		<div id="sidebar">
 			<div id="sidebarContent">
-				Pretend a comments section is here.
 			</div>
 		</div>
 		<div id="sidebar_line">
 		</div>
 		<div class="text">
-			<div id='lightboxPlace'>
-				<p>InDesign</p>
-				<div id="lightboxArea">
-					<a class="lightboxEvent">
-						<img src="indesign-pdfs/rsz_munth_book_2.jpg" height="200" width="150"></img>
-					</a>
-					<img src="chevron-left.png" height="20" width="20" id="chevLeft"></img>
-					<img src="chevron-right.png" height="20" width="20" id="chevRight"></img>
-					<br>
-					<br>
-					<small>(I'm a lightbox/gallery)
-					</small>
-				</div>
-				<div id="lightbox">
-					<img height="500" width="380">
-				</div>
-			</div>
-
-			<div id='rainmeterPlace'>
-				<p>Rainmeter</p>
-				<img style='float:left; width:135px; margin-right:8px' src='pics/desktop.JPG' height='250'></img>
-				<small><small>None of it is entirely original. I took a component or two from different skins because I liked the style, then made small adjustments (this includes fixing outdated parts, urls, and plugins, editing the picture used, changing the styling to match with each other or look nicer etc.). Currently, the skin has time, date, weather, calendar, and a music player control.</small></small>
-			</div>
-
-			<div id='thisWebsitePlace'><p>This Website</p>
-			<small><small>Although this doesn't really count as 'Other Work', I spent a lot of time on this website. This website was my first time using HTML/CSS/JS.</small></small>
+			<p>Please go to "" to some of my past work.</p>
 		</div>
-		<div id='employmentPlace'>
-			<h2 style='display:inline'>Employment Work</h2>
-			<h6 style='display:inline'>Note that the following isn't my property so I can't really provide any source or pictures</h6>
-						<div id='angularPlace'>
-				<p>MetalTrading Inc.</p>
-				<small><small>An trading platform web app focused on industral metal products written using the Angular2 framework. 
-				<br><br>I was responsible for the front end by myself, which included some complicated logic and technologies. Angular2 was also pretty new at the time so research wasn't always easy. From the project, I learnt about using custom web APIs hosted on an Apache/Tomcat server, using web sockets (socket.io) to communicate in real-time, Twitter's Bootstrap CSS library, node.js servers using Express, and SQL Server Management, as well as things relating to a real website such as auth and routing. From Angular2, I learnt how to use typescript, service/component modules, injectables, data binding, promises, observables, eventemitter etc.
-				</small></small>
-			</div>
-
-<div id='aafcPlace'>
-				<p>AAFC</p>
-				<small><small>I worked on two things: the Canadian Agricultural Nitrogen Budget (CANB) model written in Fortran and EasyGrapher (a program which automates Excel to graph certain data files) written in VBA.
-				<br><br>
-				I can't say I learnt many relevant skills from CANB, but from EasyGrapher, I learnt about modular programming, RegEx, GUI design and event handling, and Excel automation.</small></small>
-			</div>
-
-
-		</div>
-	</div>
-</body>
+	</body>
 </html>

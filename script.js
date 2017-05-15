@@ -83,6 +83,7 @@ function getActive(){
 }
 
 function setIcon(weather){
+	if (!weather) return;
 	if (weather == "Hail") {document.getElementById("weatherIcon").src ="resources/weather-icons/hail.svg";}
 	else if (weather.indexOf ("Thunderstorm") > -1) {document.getElementById("weatherIcon").src ="resources/weather-icons/storm.svg";}
 	else if (weather.indexOf ("Rain") > -1 || weather.indexOf("Drizzle") > -1 || weather.indexOf("Showers") > -1) {document.getElementById("weatherIcon").src ="resources/weather-icons/rain.svg";}
@@ -116,12 +117,14 @@ window.onload=function(){
 }
 
 var weatherFunction = function(data) {
-	weather_high = data.query.results.channel.item.forecast[0].high;
-	weather_low = data.query.results.channel.item.forecast[0].low;
-	weather_condition = data.query.results.channel.item.forecast[0].text;
-	weather_high2 = data.query.results.channel.item.forecast[1].high;
-	weather_low2 = data.query.results.channel.item.forecast[1].low;
-	weather_condition2 = data.query.results.channel.item.forecast[1].text;
+	if (data.query.results) {
+		weather_high = data.query.results.channel.item.forecast[0].high;
+		weather_low = data.query.results.channel.item.forecast[0].low;
+		weather_condition = data.query.results.channel.item.forecast[0].text;
+		weather_high2 = data.query.results.channel.item.forecast[1].high;
+		weather_low2 = data.query.results.channel.item.forecast[1].low;
+		weather_condition2 = data.query.results.channel.item.forecast[1].text;
+	}
 };
 
 jQuery(document).ready(function() {
